@@ -4,6 +4,3 @@ black
 
 # linting
 flake8
-
-# debug
-django-debug-toolbar

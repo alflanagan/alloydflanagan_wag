@@ -1,0 +1,5 @@
+wagtail
+
+# debug
+# ordinarily this would go in requirements.dev.in; needed here so pip-tools can resolve django version consistently
+django-debug-toolbar
