@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
-ROOT_URLCONF = 'alloydflanagan_wag.urls'
+ROOT_URLCONF = 'alloydflanagan.urls'
 
 TEMPLATES = [
     {
@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'alloydflanagan_wag.wsgi.application'
+WSGI_APPLICATION = 'alloydflanagan.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -151,7 +151,7 @@ MEDIA_URL = '/media/'
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = 'alloydflanagan_wag'
+WAGTAIL_SITE_NAME = 'alloydflanagan'
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
