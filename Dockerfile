@@ -53,4 +53,4 @@ RUN pip install "gunicorn==20.0.4"
 # Collect static files.
 RUN python manage.py collectstatic --noinput --clear
 
-CMD set -xe; gunicorn alloydflanagan_wag.wsgi:application
+CMD set -xe; gunicorn alloydflanagan.wsgi:application
