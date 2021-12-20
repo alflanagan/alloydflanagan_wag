@@ -1,0 +1,25 @@
+---
+
+services:
+  postgres:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: development
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+  api:
+    image: alflanagan-wagtail-dev
+    build:
+      context: .
+    command: python /app/manage.py runserver 0.0.0.0:8000
+    environment:
+      PGHOST: postgres
+      PGPASSWD: development
+      PGUSER: wagtail
+      PGNAME: alloydflanagan
+    ports:
+      - "8000:8000"
+
+volumes:
+  dbdata: {}
