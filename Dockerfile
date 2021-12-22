@@ -38,14 +38,13 @@ RUN chown wagtail:wagtail /app
 
 # Use user "wagtail" to run the build commands below and the server itself.
 USER wagtail
-RUN touch ~/.sudo_as_admin_successful
 
 # Install the project requirements.
-COPY --chown=wagtail requirements.txt requirements.dev.txt Makefile /app/
+COPY --chown=wagtail app/requirements.txt app/requirements.dev.txt app/Makefile /app/
 RUN make pip-setup && pip-sync requirements.txt requirements.dev.txt
 
 # Copy the source code of the project into the container.
-COPY --chown=wagtail:wagtail . /app/
+COPY --chown=wagtail:wagtail app /app/
 
 # Install the application server.
 RUN pip install "gunicorn==20.0.4"
