@@ -4,3 +4,4 @@ black
 
 # linting
 flake8
+ipython
