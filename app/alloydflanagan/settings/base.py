@@ -24,6 +24,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     'alloydflanagan.home',
     'alloydflanagan.search',
+    'wagtail.api.v2',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
