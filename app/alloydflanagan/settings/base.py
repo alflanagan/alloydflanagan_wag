@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
-    'home',
+    'alloydflanagan.home',
     'search',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
