@@ -4,3 +4,9 @@ psycopg2-binary
 # debug
 # ordinarily this would go in requirements.dev.in; needed here so pip-tools can resolve django version consistently
 django-debug-toolbar
+
+# web server
+gunicorn
+
+# API setup
+markdown       # Markdown support for the browsable API.

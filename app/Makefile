@@ -6,8 +6,8 @@ pip-setup:
 
 # run this any time requirements.in or requirements.dev.in change
 requirements:
-	pip-compile --generate-hashes --allow-unsafe requirements.in
-	pip-compile --generate-hashes --allow-unsafe requirements.dev.in
+	pip-compile --generate-hashes requirements.in
+	pip-compile --generate-hashes requirements.dev.in
 	pip-sync requirements.txt requirements.dev.txt
 
 # this makes up for the fact that make has no command to show what tasks are defined
