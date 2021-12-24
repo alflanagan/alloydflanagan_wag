@@ -2,8 +2,7 @@
 FROM python:3.10.0-slim-buster
 
 # Add user that will be used in the container.
-RUN adduser wagtail
-RUN usermod -aG sudo wagtail
+RUN adduser --shell /bin/bash wagtail && echo "wagtail:wagtail" | chpasswd
 
 # Install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
@@ -17,7 +16,7 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     libwebp-dev \
  && rm -rf /var/lib/apt/lists/*
 
-# RUN echo "wagtail 	ALL=(ALL:ALL) ALL" >> /etc/sudoers
+RUN echo "wagtail 	ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
 # Port used by this container to serve HTTP.
 EXPOSE 8000
@@ -45,9 +44,6 @@ RUN make pip-setup && pip-sync requirements.txt requirements.dev.txt
 
 # Copy the source code of the project into the container.
 COPY --chown=wagtail:wagtail app /app/
-
-# Install the application server.
-RUN pip install "gunicorn==20.0.4"
 
 # Collect static files.
 RUN python manage.py collectstatic --noinput --clear
