@@ -4,7 +4,7 @@ stop:
 	docker compose down --remove-orphans
 
 start:
-	docker compose up --build --detach
+	docker compose up --detach
 
 #start a shell running in the django environment
 shell:
