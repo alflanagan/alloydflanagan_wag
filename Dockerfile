@@ -39,8 +39,9 @@ RUN chown wagtail:wagtail /app
 USER wagtail
 
 # Install the project requirements.
-COPY --chown=wagtail app/requirements.txt app/requirements.dev.txt app/Makefile /app/
-RUN make pip-setup && pip-sync requirements.txt requirements.dev.txt
+COPY --chown=wagtail requirements.in requirements.dev.in requirements.txt requirements.dev.txt app/Makefile /tmp/
+COPY --chown=wagtail app/Makefile /app
+RUN make pip-setup && pip-sync /tmp/requirements.txt /tmp/requirements.dev.txt
 
 # Copy the source code of the project into the container.
 COPY --chown=wagtail:wagtail app /app/
