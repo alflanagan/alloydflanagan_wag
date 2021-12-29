@@ -18,10 +18,7 @@ services:
     volumes:
       - ./app:/app:delegated
     environment:
-      PGHOST: postgres
-      PGPASSWD: development
-      PGUSER: wagtail
-      PGNAME: alloydflanagan
+      DATABASE_URL: postgres://wagtail:development@postgres:5432/alloydflanagan
     ports:
       - "8000:8000"
 

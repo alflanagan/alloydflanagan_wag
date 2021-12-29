@@ -10,3 +10,4 @@ gunicorn
 
 # API setup
 # markdown       # Markdown support for the browsable API.
+dj-database-url

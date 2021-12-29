@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+import dj_database_url
+
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
@@ -84,15 +86,8 @@ WSGI_APPLICATION = "alloydflanagan.wsgi.application"
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "HOST": os.environ.get("PGHOST", ""),
-        "PASSWORD": os.environ.get("PGPASSWD", ""),
-        "USER": os.environ.get("PGUSER", "wagtail"),
-        "NAME": os.environ.get("PGNAME", "alloydflanagan"),
-    }
+    "default": dj_database_url.config(conn_max_age=600, ssl_require=False),
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
