@@ -1,7 +1,24 @@
+-c requirements.txt
+
 # code formatting
 isort
 black
+djhtml
+
+#testing
+factory-boy
+coverage
+django_coverage_plugin
+vcrpy
+freezegun
 
 # linting
 flake8
+flake8-django
+mypy
+django-stubs
+types-python-dateutil
+types-freezegun
+types-requests
+
 ipython

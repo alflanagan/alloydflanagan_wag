@@ -1,13 +1,20 @@
 wagtail
 psycopg2-binary
+django-widget-tweaks
+dj-database-url
 
 # debug
-# ordinarily this would go in requirements.dev.in; needed here so pip-tools can resolve django version consistently
 django-debug-toolbar
 
 # web server
 gunicorn
 
-# API setup
-# markdown       # Markdown support for the browsable API.
-dj-database-url
+# Feature flags
+django-waffle
+
+# Logging
+structlog
+django-structlog
+
+# Optional but common requirements
+django-redis
