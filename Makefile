@@ -16,6 +16,17 @@ rootshell:
 dbshell:
 	docker exec -it alloydflanagan_wag-postgres-1 /bin/bash -i
 
+requirements:
+	pip-compile --generate-hashes --allow-unsafe --resolver=backtracking --output-file requirements.txt requirements.in
+	pip-compile --generate-hashes --allow-unsafe --resolver=backtracking --output-file requirements.dev.txt requirements.dev.in
+
+upgrade_reqts:
+	pip-compile --generate-hashes --upgrade --allow-unsafe --resolver=backtracking --output-file requirements.txt requirements.in
+	pip-compile --generate-hashes --upgrade --allow-unsafe --resolver=backtracking --output-file requirements.dev.txt requirements.dev.in
+
+pip-sync:
+	pip-sync requirements.txt requirements.dev.txt
+
 # this makes up for the fact that make has no command to show what tasks are defined
 # no attempt was made at a universal solution; you'll need to enhance for any but most basic case
 tasks:
