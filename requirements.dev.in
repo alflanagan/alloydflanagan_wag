@@ -2,7 +2,8 @@
 
 # code formatting
 isort
-black
+# [d] allows black to run in background & be used by IDE
+black[d]
 djhtml
 
 #testing
