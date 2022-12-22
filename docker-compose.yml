@@ -16,6 +16,7 @@ services:
 
   postgres:
     image: postgres:alpine
+    container_name: alf-pg
     environment:
       POSTGRES_PASSWORD: development
       POSTGRES_HOST_AUTH_METHOD: md5
@@ -25,7 +26,7 @@ services:
 
   redis:
     image: 'redis:7'
-    container_name: "goz-redis"
+    container_name: "alf-redis"
     restart: on-failure
     volumes:
       - redis:/data
