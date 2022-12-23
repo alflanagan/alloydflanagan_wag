@@ -6,6 +6,7 @@ RUN adduser --shell /bin/bash wagtail && echo "wagtail:wagtail" | chpasswd
 # Install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
     build-essential \
+    curl \
     libpq-dev \
     libmariadbclient-dev \
     libjpeg62-turbo-dev \
@@ -15,7 +16,12 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     libwebp-dev \
  && rm -rf /var/lib/apt/lists/*
 
-RUN echo "wagtail 	ALL=(ALL:ALL) ALL" >> /etc/sudoers
+RUN echo "wagtail 	ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash; \
+    apt-get install -y nodejs; \
+    npm i -g corepack@latest npm@latest; \
+    corepack enable
 
 # Port used by this container to serve HTTP.
 EXPOSE 8000

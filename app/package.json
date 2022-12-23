@@ -1,0 +1,16 @@
+{
+  "name": "alloydflanagan-wag",
+  "version": "1.0.0",
+  "description": "Packages used by my web site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "A. Lloyd Flanagan <a.lloyd.flanagan@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "standard": "^17.0.0"
+  }
+}
