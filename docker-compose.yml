@@ -18,7 +18,9 @@ services:
     image: postgres:alpine
     container_name: alf-pg
     environment:
+      POSTGRES_USER: wagtail
       POSTGRES_PASSWORD: development
+      POSTGRES_DB: alloydflanagan
       POSTGRES_HOST_AUTH_METHOD: md5
       POSTGRES_INITDB_ARGS: --auth-host=md5
     volumes:
