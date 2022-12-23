@@ -1,28 +1,30 @@
 .PHONY: tasks stop start rootshell dbshell
 
+PIP_COMPILE = pip-compile --generate-hashes --allow-unsafe --resolver=backtracking
+
 stop:
 	docker compose down --remove-orphans
 
 start:
-	docker compose up --detach
+	docker compose up --wait
 
 #start a shell running in the django environment
 shell:
-	docker exec -it alloydflanagan_wag-api-1 /bin/bash -i
+	docker exec -it alf-wag /bin/bash -i
 
 rootshell:
-	docker exec -it -u 0 alloydflanagan_wag-api-1 /bin/bash -i
+	docker exec -it -u 0 alf-wag /bin/bash -i
 
 dbshell:
-	docker exec -it alloydflanagan_wag-postgres-1 /bin/bash -i
+	docker exec -it alf-pg /bin/bash -i
 
 requirements:
-	pip-compile --generate-hashes --allow-unsafe --resolver=backtracking --output-file requirements.txt requirements.in
-	pip-compile --generate-hashes --allow-unsafe --resolver=backtracking --output-file requirements.dev.txt requirements.dev.in
+	$(PIP_COMPILE) requirements.in
+	$(PIP_COMPILE) requirements.dev.in
 
 upgrade_reqts:
-	pip-compile --generate-hashes --upgrade --allow-unsafe --resolver=backtracking --output-file requirements.txt requirements.in
-	pip-compile --generate-hashes --upgrade --allow-unsafe --resolver=backtracking --output-file requirements.dev.txt requirements.dev.in
+	$(PIP_COMPILE) --upgrade requirements.in
+	$(PIP_COMPILE) --upgrade requirements.dev.in
 
 pip-sync:
 	pip-sync requirements.txt requirements.dev.txt
