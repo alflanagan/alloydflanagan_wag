@@ -24,9 +24,13 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
-    "alloydflanagan.blog",
-    "alloydflanagan.home",
-    "alloydflanagan.search",
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+
     "wagtail.api.v2",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
@@ -41,12 +45,10 @@ INSTALLED_APPS = [
     "wagtail.core",
     "modelcluster",
     "taggit",
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
+
+    "alloydflanagan.blog",
+    "alloydflanagan.home",
+    "alloydflanagan.search",
 ]
 
 MIDDLEWARE = [
@@ -145,10 +147,9 @@ STATIC_URL = "/static/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-
 # Wagtail settings
-
 WAGTAIL_SITE_NAME = "alloydflanagan"
+WAGTAILADMIN_BASE_URL = "admin/"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
