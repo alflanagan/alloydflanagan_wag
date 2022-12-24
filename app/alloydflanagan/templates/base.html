@@ -8,12 +8,12 @@
     <title>
       {% block title %}
         {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
-      {% endblock %}
+      {% endblock title %}
       {% block title_suffix %}
         {% with self.get_site.site_name as site_name %}
           {% if site_name %}- {{ site_name }}{% endif %}
         {% endwith %}
-      {% endblock %}
+      {% endblock title_suffix %}
     </title>
     <meta name="description" content="A Lloyd Flanagan's Personal Website" />
     <link rel="apple-touch-icon" href="{% static 'images/logo192.png' %}" />
@@ -32,22 +32,22 @@
 
     {% block extra_css %}
 
-    {% endblock %}
+    {% endblock extra_css %}
   </head>
 
-  <body class="{% block body_class %}{% endblock %}">
+  <body class="{% block body_class %}{% endblock body_class %}">
     {% wagtailuserbar %}
 
     <div class="app">
       <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         {% block header %}
           {% include 'components/header.html' %}
-        {% endblock %}
+        {% endblock header %}
         {% block content %}
-        {% endblock %}
+        {% endblock content %}
         {% block footer %}
           {% include 'components/footer.html' %}
-        {% endblock %}
+        {% endblock footer %}
       </div>
     </div>
 
@@ -56,6 +56,6 @@
 
     {% block extra_js %}
 
-    {% endblock %}
+    {% endblock extra_js %}
   </body>
 </html>
