@@ -24,14 +24,14 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash; \
     corepack enable
 
 # Port used by this container to serve HTTP.
-EXPOSE 8000
+EXPOSE 8080
 
 # Set environment variables.
 # 1. Force Python stdout and stderr streams to be unbuffered.
 # 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
 #    command.
 ENV PYTHONUNBUFFERED=1 \
-    PORT=8000 \
+    PORT=8080 \
     PATH=/home/wagtail/.local/bin:$PATH
 
 # Use /app folder as a directory where the source code is stored.
@@ -54,4 +54,4 @@ COPY --chown=wagtail:wagtail app /app/
 # Collect static files.
 RUN python manage.py collectstatic --noinput --clear
 
-CMD set -xe; gunicorn alloydflanagan.wsgi:application
+CMD set -xe; gunicorn alloydflanagan.wsgi:application -b 0.0.0.0:$PORT
