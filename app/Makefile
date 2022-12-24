@@ -19,3 +19,14 @@ djhtml:
 # no attempt was made at a universal solution; you'll need to enhance for any but most basic case
 tasks:
 	@grep -E '^[a-zA-Z_-]+:' Makefile | cut -d: -f1 | grep -v tasks
+
+flake8:
+	find alloydflanagan -name migrations -prune -o -name '*.py' -exec flake8 '{}' +
+
+isort:
+	isort alloydflanagan
+
+black:
+	black alloydflanagan
+
+lint: isort black flake8 djhtml
