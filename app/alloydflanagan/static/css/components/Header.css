@@ -1,0 +1,16 @@
+.masthead {
+  margin-bottom: 2rem;
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+  color: black;
+  margin-top: 2rem;
+}
+
+.ad-notice {
+  background-color: red;
+  opacity: 0.5;
+}
