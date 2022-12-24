@@ -31,28 +31,31 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/alloydflanagan.css' %}">
 
     {% block extra_css %}
-      {# Override this in templates to add extra stylesheets #}
+
     {% endblock %}
   </head>
 
   <body class="{% block body_class %}{% endblock %}">
     {% wagtailuserbar %}
 
-    {% block content %}
-      <div class="app">
-        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="app">
+      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        {% block header %}
           {% include 'components/header.html' %}
-
-          {# <Footer /> #}
-        </div>
+        {% endblock %}
+        {% block content %}
+        {% endblock %}
+        {% block footer %}
+          {% include 'components/footer.html' %}
+        {% endblock %}
       </div>
-    {% endblock %}
+    </div>
 
     {# Global javascript #}
     <script type="text/javascript" src="{% static 'js/alloydflanagan.js' %}"></script>
 
     {% block extra_js %}
-      {# Override this in templates to add extra javascript #}
+
     {% endblock %}
   </body>
 </html>
