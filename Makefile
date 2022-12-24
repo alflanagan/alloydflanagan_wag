@@ -29,9 +29,6 @@ upgrade_reqts:
 pip-sync:
 	pip-sync requirements.txt requirements.dev.txt
 
-djhtml:
-	find . -type f -name "*.html" -exec djhtml -i -t2 '{}' +
-
 # this makes up for the fact that make has no command to show what tasks are defined
 # no attempt was made at a universal solution; you'll need to enhance for any but most basic case
 tasks:
