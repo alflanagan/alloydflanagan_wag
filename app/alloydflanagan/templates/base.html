@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/alloydflanagan.css' %}">
     {# link tags to be removed whenever I get around ot setting up webpacke #}
     <link rel="stylesheet" type="text/css" href="{% static 'css/components/Header.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/components/Tags.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/components/Tabs.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/components/Footer.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/components/UnsplashCredit.css' %}">
 
@@ -43,7 +43,7 @@
   <body class="{% block body_class %}{% endblock body_class %}">
     {% wagtailuserbar %}
 
-    <div class="app">
+    <div id="app">
       <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         {% block header %}
           {% include 'components/header.html' %}

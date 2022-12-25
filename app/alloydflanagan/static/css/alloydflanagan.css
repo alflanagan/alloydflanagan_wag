@@ -30,11 +30,11 @@ code {
     monospace;
 }
 
-.app {
+#app {
   text-align: center;
   background: url("../images/vintage-paper-texture-51.jpg");
   width: 100%;
-  height: 100%;
+  height: 100vh;
   font-family: "Cantata One", serif;
 }
 
