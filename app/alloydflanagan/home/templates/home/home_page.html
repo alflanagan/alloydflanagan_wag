@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static wagtailcore_tags  %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -7,5 +7,7 @@
 {% endblock extra_css %}
 
 {% block content %}
-  {{ page.content|safe }}
+  <div class="home-intro">
+    {{ page.intro|richtext }}
+  </div>
 {% endblock content %}
