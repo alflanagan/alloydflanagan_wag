@@ -32,7 +32,8 @@ code {
 
 #app {
   text-align: center;
-  background: url("../images/vintage-paper-texture-51.jpg");
+  /* TODO: figure out how to integrate this with django templates and {% static %}? */
+  background: url("../../static/images/vintage-paper-texture-51.jpg");
   width: 100%;
   height: 100vh;
   font-family: "Cantata One", serif;
@@ -78,4 +79,8 @@ code {
   100% {
     transform: translateY(0);
   }
+}
+
+.home-intro {
+  color: #101010;
 }
