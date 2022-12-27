@@ -5,7 +5,8 @@
   "main": "client/index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "lint": "npx standard ."
   },
   "author": "A. Lloyd Flanagan <a.lloyd.flanagan@gmail.com>",
   "license": "GPL-3.0-or-later",
@@ -15,9 +16,15 @@
     "jest-environment-jsdom": "^29.3.1",
     "less": "^4.1.3",
     "less-loader": "^11.1.0",
+    "mini-css-extract-plugin": "^2.7.2",
     "standard": "^17.0.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
+  },
+  "standard": {
+    "ignore": [
+      "app/alloydflanagan/static/*.js"
+    ]
   }
 }
