@@ -132,3 +132,4 @@ dmypy.json
 app/node_modules/
 app/media/
 app/alloydflanagan/static
+app/static
