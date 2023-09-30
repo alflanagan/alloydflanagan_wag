@@ -11,6 +11,7 @@
   "author": "A. Lloyd Flanagan <a.lloyd.flanagan@gmail.com>",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
+    "htmx.org": "*",
     "css-loader": "^6.7.3",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
