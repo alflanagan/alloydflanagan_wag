@@ -21,4 +21,5 @@ types-python-dateutil
 types-freezegun
 types-requests
 
+# vastly superior REPL
 ipython
