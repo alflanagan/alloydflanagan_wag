@@ -42,9 +42,8 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | b
 RUN /bin/bash -c ". ~/.nvm/nvm.sh &&  nvm install lts/hydrogen"
 
 # Install the project requirements.
-COPY --chown=webapp requirements.in requirements.dev.in requirements.txt app/Makefile /tmp/
-COPY --chown=webapp app/Makefile /app
-RUN make pip-setup && pip-sync /tmp/requirements.txt
+COPY --chown=webapp app/Makefile requirements.txt /app/
+RUN make pip-setup && pip-sync requirements.txt
 
 # Copy the source code of the project into the container.
 COPY --chown=webapp:webapp app /app/
