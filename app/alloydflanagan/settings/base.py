@@ -134,7 +134,8 @@ STATICFILES_FINDERS = [
 # JavaScript / CSS assets being served from cache (e.g. after a Wagtail upgrade).
 # See https://docs.djangoproject.com/en/3.1/ref/contrib/staticfiles/#manifeststaticfilesstorage
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
-STATICFILES_DIRS = [os.path.join(PROJECT_DIR, "client")]
+# this should contain any static files that aren't specific to an app
+STATICFILES_DIRS = [os.path.join(PROJECT_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = "/static/"
 

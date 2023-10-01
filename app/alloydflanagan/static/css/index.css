@@ -1,8 +1,7 @@
-@import "./components/Footer.less";
-@import "./components/Header.less";
-@import "./components/Tabs.less";
-@import "./components/UnsplashCredit.less";
-
+@import url("components/Footer.css");
+@import url("components/Header.css");
+@import url("components/Tabs.css");
+@import url("components/UnsplashCredit.css");
 
 body {
   margin: 0;
@@ -38,6 +37,7 @@ code {
 
 #app {
   text-align: center;
+
   /* TODO: figure out how to integrate this with django templates and {% static %}? */
   background: url("../images/vintage-paper-texture-51.jpg");
   width: 100%;
