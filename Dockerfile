@@ -1,7 +1,7 @@
 FROM python:3.11.5-slim-bookworm
 
 # Add user that will be used in the container.
-RUN adduser --shell /bin/bash wagtail && echo "wagtail:wagtail" | chpasswd
+RUN adduser --shell /bin/bash webapp && echo "webapp:webapp" | chpasswd
 
 # Install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
@@ -15,7 +15,7 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     libwebp-dev \
  && rm -rf /var/lib/apt/lists/*
 
-RUN echo "wagtail 	ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN echo "webapp 	ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Port used by this container to serve HTTP.
 EXPOSE 8080
@@ -26,31 +26,28 @@ EXPOSE 8080
 #    command.
 ENV PYTHONUNBUFFERED=1 \
     PORT=8080 \
-    PATH=/home/wagtail/.local/bin:$PATH
+    PATH=/home/webapp/.local/bin:$PATH
 
 # Use /app folder as a directory where the source code is stored.
 WORKDIR /app
 
-# Set this directory to be owned by the "wagtail" user.
-RUN chown wagtail:wagtail /app
+# Set this directory to be owned by the "webapp" user.
+RUN chown webapp:webapp /app
 
-# Use user "wagtail" to run the build commands below and the server itself.
-USER wagtail
+# Use user "webapp" to run the build commands below and the server itself.
+USER webapp
 
 # get node
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash; \
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+RUN /bin/bash -c ". ~/.nvm/nvm.sh &&  nvm install lts/hydrogen"
 
-RUN NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" \
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" ; \
-    nvm install lts/hydrogen \
-    
 # Install the project requirements.
-COPY --chown=wagtail requirements.in requirements.dev.in requirements.txt app/Makefile /tmp/
-COPY --chown=wagtail app/Makefile /app
+COPY --chown=webapp requirements.in requirements.dev.in requirements.txt app/Makefile /tmp/
+COPY --chown=webapp app/Makefile /app
 RUN make pip-setup && pip-sync /tmp/requirements.txt
 
 # Copy the source code of the project into the container.
-COPY --chown=wagtail:wagtail app /app/
+COPY --chown=webapp:webapp app /app/
 
 # Collect static files.
 RUN python manage.py collectstatic --noinput --clear
