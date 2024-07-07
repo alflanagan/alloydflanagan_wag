@@ -3,6 +3,7 @@
 # code formatting
 isort
 ruff
+ruff-lsp
 djhtml
 
 #testing
