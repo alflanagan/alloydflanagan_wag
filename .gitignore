@@ -128,9 +128,19 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-
 .idea/
 .DS_Store
 app/node_modules/
 app/media/
 app/static
+secrets.txt
+
+# yarn pnp files
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+app/.yarn/install-state.gz

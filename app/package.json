@@ -29,5 +29,6 @@
     "ignore": [
       "app/alloydflanagan/static/*.js"
     ]
-  }
+  },
+  "packageManager": "yarn@4.3.1"
 }
