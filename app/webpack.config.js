@@ -1,5 +1,5 @@
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require.resolve('path')
+const MiniCssExtractPlugin = require.resolve('mini-css-extract-plugin')
 
 module.exports = {
   entry: './alloydflanagan/client/index.js',
