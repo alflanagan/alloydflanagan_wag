@@ -4,8 +4,8 @@ __pycache__/
 secrets.txt
 
 # directories w/files from old website
-components/
-public/
+/components/
+/public/
 
 # auto-select for my local virtualenv
 .python-version
