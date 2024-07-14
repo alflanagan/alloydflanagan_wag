@@ -1,4 +1,3 @@
-# -*- mode:yaml-ts -*-
 ---
 # see also .editorconfig
 trailingComma: 'all'
