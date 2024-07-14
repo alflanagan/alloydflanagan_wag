@@ -29,6 +29,9 @@ upgrade_reqts:
 	$(PIP_COMPILE) --upgrade requirements.in; \
 	$(PIP_COMPILE) --upgrade requirements.dev.in
 
+pip-init:
+	python -m pip install --upgrade pip wheel pip-tools
+
 pip-sync:
 	pip-sync requirements.txt requirements.dev.txt
 
