@@ -144,3 +144,7 @@ secrets.txt
 !.yarn/sdks
 !.yarn/versions
 app/.yarn/install-state.gz
+
+# directories w/files from old website
+components/
+public/
