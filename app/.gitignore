@@ -1,0 +1,12 @@
+# files collected by manage.py collectstatic
+static/
+
+# yarn pnp files
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.yarn/install-state.gz
