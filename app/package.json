@@ -21,6 +21,7 @@
     "less-loader": "^11.1.0",
     "mini-css-extract-plugin": "^2.7.2",
     "popper.js": "^1.16.1",
+    "prettier": "^3.3.3",
     "standard": "^17.0.0",
     "style-loader": "^3.3.1",
     "stylelint": "^15.10.3",
