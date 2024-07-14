@@ -1,6 +1,6 @@
+# -*- mode:yaml-ts -*-
 ---
+# see also .editorconfig
 trailingComma: 'all'
-tabWidth: 2
 semi: false
 singleQuote: true
-printWidth: 120
