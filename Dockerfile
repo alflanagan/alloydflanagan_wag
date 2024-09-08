@@ -1,4 +1,6 @@
-FROM python:3.11.5-slim-bookworm
+FROM python:3.12.5-slim-bookworm
+
+SHELL ["/bin/bash", "-euo", "pipefail", "-c"]
 
 # Add user that will be used in the container.
 RUN adduser --shell /bin/bash webapp && echo "webapp:webapp" | chpasswd
@@ -48,7 +50,4 @@ RUN make pip-setup && pip-sync requirements.txt
 # Copy the source code of the project into the container.
 COPY --chown=webapp:webapp app /app/
 
-# Collect static files.
-RUN python manage.py collectstatic --noinput --clear
-
-CMD set -xe; gunicorn alloydflanagan.wsgi:application -b 0.0.0.0:$PORT
+CMD ["gunicorn", "alloydflanagan.wsgi:application", "-b", "0.0.0.0:$PORT"]
