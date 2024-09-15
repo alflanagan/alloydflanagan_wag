@@ -1,11 +1,8 @@
-wagtail
-psycopg2-binary
+wagtail==5.1.2
+psycopg
 django-widget-tweaks
 dj-database-url
 django-htmx
-
-# debug
-django-debug-toolbar
 
 # web server
 gunicorn
