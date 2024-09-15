@@ -1,5 +1,8 @@
 -c requirements.txt
 
+# debug
+django-debug-toolbar
+
 # code formatting
 isort
 ruff
