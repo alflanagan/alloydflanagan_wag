@@ -28,9 +28,13 @@ ENV PYTHONUNBUFFERED=1 \
 # Use /app folder as a directory where the source code is stored.
 WORKDIR /app
 
+# requirements handled automatically by uv
 # Install the project requirements.
-COPY app/Makefile requirements.txt /app/
-RUN make pip-setup && pip-sync requirements.txt
+# COPY app/Makefile requirements.txt /app/
+# RUN make pip-setup && pip-sync requirements.txt
 
 # Copy the source code of the project into the container.
 COPY app /app/
+
+RUN pip install --no-cache-dir uv==0.7.12 && \
+    uv sync --frozen
