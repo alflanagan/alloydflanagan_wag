@@ -36,5 +36,5 @@ WORKDIR /app
 # Copy the source code of the project into the container.
 COPY app /app/
 
-RUN pip install --no-cache-dir uv==0.7.4 && \
+RUN pip install --no-cache-dir uv==0.7.12 && \
     uv sync --frozen
