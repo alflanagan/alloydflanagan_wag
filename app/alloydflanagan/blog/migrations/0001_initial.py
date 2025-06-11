@@ -2,7 +2,7 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import wagtail.core.fields
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -61,7 +61,7 @@ class Migration(migrations.Migration):
                     "primary_image",
                     models.ImageField(null=True, upload_to="blog/images/"),
                 ),
-                ("content", wagtail.core.fields.RichTextField()),
+                ("content", wagtail.fields.RichTextField()),
             ],
             options={
                 "abstract": False,

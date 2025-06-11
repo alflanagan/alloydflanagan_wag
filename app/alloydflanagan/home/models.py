@@ -1,5 +1,5 @@
 from wagtail.admin.panels import FieldPanel
-from wagtail.core.models import Page
+from wagtail.models import Page
 from wagtail.fields import RichTextField
 
 
