@@ -2,7 +2,6 @@
 
 services:
   wagtail:
-    image: alflanagan-wagtail-dev
     build:
       context: .
     command: make run-server
