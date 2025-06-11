@@ -1,4 +1,4 @@
-PYTHON=uv run python
+PYTHON=uv run --link-mode=copy python
 
 run-server:
 	$(PYTHON) manage.py migrate

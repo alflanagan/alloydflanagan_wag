@@ -38,3 +38,6 @@ COPY app /app/
 
 RUN pip install --no-cache-dir uv==0.7.12 && \
     uv sync --frozen
+
+# do I need to set up the database for fly?
+CMD ["make", "run-server"]
