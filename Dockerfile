@@ -5,6 +5,7 @@ FROM python:3.12.5-slim-bookworm
 SHELL ["/bin/bash", "-euo", "pipefail", "-c"]
 
 # Install system packages required by Wagtail and Django.
+# hadolint ignore=DL3008
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
     build-essential \
     curl \
@@ -28,16 +29,11 @@ ENV PYTHONUNBUFFERED=1 \
 # Use /app folder as a directory where the source code is stored.
 WORKDIR /app
 
-# requirements handled automatically by uv
-# Install the project requirements.
-# COPY app/Makefile requirements.txt /app/
-# RUN make pip-setup && pip-sync requirements.txt
-
 # Copy the source code of the project into the container.
 COPY app /app/
 
 RUN pip install --no-cache-dir uv==0.7.12 && \
     uv sync --frozen
 
-# do I need to set up the database for fly?
+# Note: Fly automatically sets DATABASE_URL
 CMD ["make", "run-server"]
