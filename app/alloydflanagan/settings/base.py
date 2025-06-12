@@ -30,7 +30,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "wagtail.api.v2",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -143,6 +142,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
 # Wagtail settings
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 10_000
 WAGTAIL_SITE_NAME = "alloydflanagan"
 WAGTAILADMIN_BASE_URL = "admin/"
 
@@ -150,4 +150,8 @@ WAGTAILADMIN_BASE_URL = "admin/"
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = "https://alloydflanagan.com"
 
-CSRF_TRUSTED_ORIGINS = ["https://alloydflanagan.com", "https://www.alloydflanagan.com"]
+CSRF_TRUSTED_ORIGINS = [
+    "https://alloydflanagan.com",
+    "https://www.alloydflanagan.com",
+    "https://alloydflanagan-wag.fly.dev/",
+]
