@@ -56,7 +56,7 @@ requires-dist = [
     { name = "gunicorn", specifier = ">=23.0.0" },
     { name = "psycopg", specifier = ">=3.2.7" },
     { name = "structlog", specifier = ">=25.3.0" },
-    { name = "wagtail", specifier = "==5.1.2" },
+    { name = "wagtail", specifier = "<5.3" },
 ]
 
 [package.metadata.requires-dev]
@@ -1273,7 +1273,7 @@ wheels = [
 
 [[package]]
 name = "wagtail"
-version = "5.1.2"
+version = "5.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "anyascii" },
@@ -1294,9 +1294,9 @@ dependencies = [
     { name = "telepath" },
     { name = "willow", extra = ["heif"] },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/4e/95/f1712cba6120019e87f7243c784d516a2af43915bf9eb80268549abcadcc/wagtail-5.1.2.tar.gz", hash = "sha256:1f79d7810e27a644340016da7d02f860425f9ff78ace09706cc895f5e6610828", size = 6259513, upload-time = "2023-09-25T13:08:26.1Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c4/10/8570ddb519455c8a07ac4dd9c95b46aecc5ca2c776a8d0ed143bdf230ea9/wagtail-5.2.tar.gz", hash = "sha256:695b2af9c42ab7b293f489abc9e3dcaa2cbe28977fe0b730683c43b46e0f75d1", size = 6348635, upload-time = "2023-11-01T12:56:04.673Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ce/af/00ac88fcf2e240eee565b2d09df791afa374a69418261532ddefee53c45d/wagtail-5.1.2-py3-none-any.whl", hash = "sha256:f4df51dea3b492d21effae2523cb1aed11631e354844c02c7eb8f5985d79bf38", size = 8883956, upload-time = "2023-09-25T13:08:18.447Z" },
+    { url = "https://files.pythonhosted.org/packages/0b/73/b5979b6f325d6d0ccc2842a08c6069fd6fa1a210487be237b98a0761e237/wagtail-5.2-py3-none-any.whl", hash = "sha256:a1d78f99d33ade5ac3ce7dca92f570f28513214d4e203421813ba544cd38eac2", size = 8960488, upload-time = "2023-11-01T12:55:57.842Z" },
 ]
 
 [[package]]

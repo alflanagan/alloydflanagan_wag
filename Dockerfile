@@ -32,7 +32,7 @@ WORKDIR /app
 # Copy the source code of the project into the container.
 COPY app /app/
 
-RUN pip install --no-cache-dir uv==0.7.12 && \
+RUN pip install --no-cache-dir uv==0.7.13 && \
     uv sync --frozen
 
 # Note: Fly automatically sets DATABASE_URL

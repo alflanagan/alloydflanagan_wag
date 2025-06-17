@@ -1,8 +1,10 @@
 fly.toml
 .git/
 *.sqlite3
-app/node_modules/
 terraform/
-app/static/
 .idea/
 .vscode/
+**/.venv/
+**/static/
+**/.DS_Store
+**/.env*
