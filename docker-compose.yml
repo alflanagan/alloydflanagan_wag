@@ -6,7 +6,17 @@ services:
       context: .
     command: make run-server
     volumes:
-      - ./app:/app:delegated
+      # don't link .venv! TODO: find simpler dir organization
+      - ./app/.yarn:/app/.yarn:delegated
+      - ./app/.yarnrc.yml:/app/.yarnrc:delegated
+      - ./app/alloydflanagan:/app/alloydflanagan:delegated
+      - ./app/Makefile:/app/Makefile:delegated
+      - ./app/manage.py:/app/manage.py:delegated
+      - ./app/media:/app/media:delegated
+      - ./app/package.json:/app/package.json:delegated
+      - ./app/pyproject.toml:/app/pyproject.toml:delegated
+      - ./app/uv.lock:/app/uv.lock:delegated
+      - ./app/yarn.lock:/app/yarn.lock:delegated
     environment:
       DATABASE_URL: postgres://wagtail:development@postgres:5432/alloydflanagan
     ports:
