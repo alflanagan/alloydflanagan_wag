@@ -32,6 +32,7 @@ WORKDIR /app
 # Copy the source code of the project into the container.
 COPY app /app/
 
+#TODO: get uv to use system python instead of downloading -- faster, more reliable.
 RUN pip install --no-cache-dir uv==0.7.13 && \
     uv sync --frozen
 
