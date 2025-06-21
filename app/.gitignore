@@ -12,3 +12,4 @@ static/
 .yarn/install-state.gz
 
 .env*
+sqlite3.db
