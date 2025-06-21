@@ -4,5 +4,6 @@ __pycache__/
 secrets.txt
 
 # directories w/files from old website
-/components/
 /public/
+# uploaded files
+app/media/
