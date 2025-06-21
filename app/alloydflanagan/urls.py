@@ -10,7 +10,6 @@ from .home import urls as home_urls
 from .search import views as search_views
 
 urlpatterns = [
-    path("home/", include(home_urls), name="home"),
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
