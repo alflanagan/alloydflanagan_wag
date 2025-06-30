@@ -33,8 +33,8 @@ WORKDIR /app
 COPY app /app/
 
 #TODO: get uv to use system python instead of downloading -- faster, more reliable.
-RUN pip install --no-cache-dir uv==0.7.13 && \
-    uv sync --frozen
+RUN pip install --no-cache-dir uv==0.7.17 && \
+    uv sync --frozen --no-dev
 
 # Note: Fly automatically sets DATABASE_URL
 CMD ["make", "run-server"]
