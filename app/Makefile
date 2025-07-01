@@ -2,7 +2,7 @@ PYTHON=uv run --link-mode=copy python
 
 run-server:
 	$(PYTHON) manage.py migrate
-	$(PYTHON) manage.py collectstatic
+	$(PYTHON) manage.py collectstatic --no-input
 	uv run gunicorn --timeout 30 alloydflanagan.wsgi:application --log-file -
 
 djhtml:

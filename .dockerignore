@@ -5,6 +5,7 @@ terraform/
 .idea/
 .vscode/
 **/.venv/
-**/static/
+alloydflanagan/static/*
+!alloydflanagan/static/.keep
 **/.DS_Store
 **/.env*

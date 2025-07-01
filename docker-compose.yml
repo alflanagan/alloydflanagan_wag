@@ -19,6 +19,7 @@ services:
       - ./app/yarn.lock:/app/yarn.lock:delegated
     environment:
       DATABASE_URL: postgres://wagtail:development@postgres:5432/alloydflanagan
+      DJANGO_SETTINGS_MODULE: alloydflanagan.settings.dev
     ports:
       - "8080:8080"
 
