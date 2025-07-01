@@ -3,7 +3,7 @@ PYTHON=uv run --link-mode=copy python
 run-server:
 	$(PYTHON) manage.py migrate
 	$(PYTHON) manage.py collectstatic --no-input
-	uv run gunicorn --timeout 30 alloydflanagan.wsgi:application --log-file -
+	uv run gunicorn --timeout 30 alloydflanagan.wsgi:application --log-file - --bind 0.0.0.0:8080
 
 djhtml:
 	find alloydflanagan -name '*.html' -exec djhtml -i -t2 '{}' +
