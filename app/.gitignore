@@ -1,5 +1,6 @@
 # files collected by manage.py collectstatic
-static/
+static/*
+!static/.keep
 
 # yarn pnp files
 .pnp.*
