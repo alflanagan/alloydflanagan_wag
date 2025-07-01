@@ -24,7 +24,8 @@ EXPOSE 8080
 # 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
 #    command.
 ENV PYTHONUNBUFFERED=1 \
-  PORT=8080
+    PORT=8080 \
+    DJANGO_SETTINGS_MODULE=alloydflanagan.settings.production
 
 # Use /app folder as a directory where the source code is stored.
 WORKDIR /app
