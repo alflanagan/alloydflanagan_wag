@@ -29,7 +29,6 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "wagtail.contrib.search_promotions",
     "django.contrib.staticfiles",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",

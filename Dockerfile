@@ -24,8 +24,7 @@ EXPOSE 8080
 # 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
 #    command.
 ENV PYTHONUNBUFFERED=1 \
-    PORT=8080 \
-    DJANGO_SETTINGS_MODULE=alloydflanagan.settings.production
+  PORT=8080
 
 # Use /app folder as a directory where the source code is stored.
 WORKDIR /app
@@ -34,8 +33,8 @@ WORKDIR /app
 COPY app /app/
 
 #TODO: get uv to use system python instead of downloading -- faster, more reliable.
-RUN pip install --no-cache-dir uv==0.7.17 && \
-    uv sync --frozen --no-dev
+RUN pip install --no-cache-dir uv==0.7.13 && \
+    uv sync --frozen
 
 # Note: Fly automatically sets DATABASE_URL
 CMD ["make", "run-server"]

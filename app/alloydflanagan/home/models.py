@@ -17,7 +17,7 @@ class HomePage(Page):
         ('text', RichTextBlock()),  #probably will use custom type later
         ('image', ImageChooserBlock()),
         ('header', HeaderBlock()),
-    ], blank=True)
+    ], use_json_field=True, blank=True)
 
     content_panels = Page.content_panels + [
         FieldPanel("intro", classname="full"),
