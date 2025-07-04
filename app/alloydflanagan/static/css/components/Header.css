@@ -14,3 +14,7 @@
   background-color: red;
   opacity: 0.5;
 }
+
+#content img {
+  max-width: 400px;
+}
