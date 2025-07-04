@@ -15,7 +15,6 @@ dependencies = [
     "psycopg>=3.2.7",
     "structlog>=25.3.0",
     "wagtail<5.3",
-    "whitenoise>=6.9.0",
 ]
 
 [dependency-groups]

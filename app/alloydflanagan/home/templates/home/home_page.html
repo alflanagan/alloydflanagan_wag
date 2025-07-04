@@ -3,19 +3,19 @@
 
 {% block body_class %}template-homepage{% endblock %}
 
-{% block content %}
-  <!--  home_page.html -->
+{% block extra_css %}
+{% endblock extra_css %}
 
-  {# include_block page.content #}
-  <article>
-  <header>
-    {{ page.header }}
-  </header>
-  <section id="intro">
+{% block header %}
+  {% include 'components/header.html' %}
+{% endblock header %}
+
+{% block content %}
+  <div class="home-intro">
     {{ page.intro|richtext }}
-  </section>
-  <main id="content">
-    {{ page.content }}
-  </main>
-  </article>
+  </div>
 {% endblock content %}
+
+{% block footer %}
+  {% include 'components/footer.html' %}
+{% endblock footer %}
