@@ -13,3 +13,8 @@ static/
 
 .env*
 sqlite3.db
+
+media/*
+!media/.keep
+static/*
+!static/.keep
