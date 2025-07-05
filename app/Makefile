@@ -1,9 +1,11 @@
 PYTHON=uv run --link-mode=copy python
 
 run-server:
+	echo "Starting server..."
 	$(PYTHON) manage.py migrate
-	$(PYTHON) manage.py collectstatic
+	$(PYTHON) manage.py collectstatic --noinput
 	uv run gunicorn --timeout 30 alloydflanagan.wsgi:application --log-file -
+	echo "Server is up."
 
 djhtml:
 	find alloydflanagan -name '*.html' -exec djhtml -i -t2 '{}' +
