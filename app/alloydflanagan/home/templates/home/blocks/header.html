@@ -1,0 +1,17 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<header class="masthead mb-auto">
+  <div class="inner">
+    <div>
+      <h3 class="masthead-brand">A Lloyd Flanagan</h3>
+    </div>
+  <div class="header-banner">
+    {% image block.banner width-800 %}
+  </div>
+    <nav class="nav nav-masthead justify-content-center app-nav">
+      {% for tab in block.tabs %}
+        {% include_block tab %}
+      {% endfor %}
+    </nav>
+  </div>
+</header>

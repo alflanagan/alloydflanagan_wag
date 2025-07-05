@@ -40,17 +40,13 @@
 
     <div id="app">
       <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        {% block header %}
-        {% endblock header %}
         {% block content %}
         {% endblock content %}
-        {% block footer %}
-        {% endblock footer %}
       </div>
     </div>
 
     {# Global javascript #}
-    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+    {# <script type="text/javascript" src="{% static 'main.js' %}"></script> #}
 
     {% block extra_js %}
 
