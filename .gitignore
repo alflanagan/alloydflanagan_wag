@@ -1,7 +1,7 @@
+# NOTE: see also app/.gitignore
 __pycache__/
 .idea/
 .DS_Store
-secrets.txt
 
 # directories w/files from old website
 /public/
