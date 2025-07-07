@@ -1,2 +1,8 @@
 <!-- home/blocks/menu_link.html -->
-<span class="nav-link"><a href="{{ block.target }}">{{ block.title }}</a></span>
+{% if block.targetPage %}
+<span class="nav-link"><a href="{{ block.targetPage }}">{{ block.title }}</a></span>
+{% elsif block.targetDoc %}
+<span class="nav-link"><a href="{{ block.targetDoc }}">{{ block.title }}</a></span>
+{% else %}
+<span class="nav-link"><a href="{{ block.targetUrl }}">{{ block.title }}</a></span>
+{% endif %}
