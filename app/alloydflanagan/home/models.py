@@ -13,13 +13,16 @@ class HomePage(Page):
     intro = RichTextField()
     # may move resume to AboutPage model if/when we have one
     resume = FileField(blank=True)
+    header = StreamField([
+        ('header', HeaderBlock())
+    ], blank=True)
     content = StreamField([
         ('text', RichTextBlock()),  #probably will use custom type later
         ('image', ImageChooserBlock()),
-        ('header', HeaderBlock()),
     ], blank=True)
 
     content_panels = Page.content_panels + [
+        FieldPanel('header', classname="full"),
         FieldPanel("intro", classname="full"),
         FieldPanel("resume", classname="full"),
         FieldPanel("content", classname="full"),
