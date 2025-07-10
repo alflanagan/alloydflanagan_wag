@@ -154,5 +154,5 @@ BASE_URL = "https://alloydflanagan.com"
 CSRF_TRUSTED_ORIGINS = [
     "https://alloydflanagan.com",
     "https://www.alloydflanagan.com",
-    "https://alloydflanagan-wag.fly.dev/",
+    "https://alloydflanagan-wag.fly.dev",
 ]
