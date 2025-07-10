@@ -18,6 +18,16 @@ rootshell:
 dbshell:
 	docker compose exec -it postgres /bin/bash -i
 
+exec_on_db:
+	# TODO: get machine ID from app name
+	fly machine exec 1857276f657438 --app alf-wag-db 'bash -c "psql --version"'
+
+fly_dbshell:
+	fly machine exec 6830393f152ed8 '/bin/bash -c "cd app && uv run python manage.py dbshell"'
+
+fly_console:
+	fly console --machine 6830393f152ed8
+
 # this makes up for the fact that make has no command to show what tasks are defined
 # no attempt was made at a universal solution; you'll need to enhance for any but most basic case
 targets:
