@@ -28,6 +28,10 @@ fly_dbshell:
 fly_console:
 	fly console --machine 6830393f152ed8
 
+fly_users:
+	# TODO: should be able to make general bash script to accept arbitrary python.
+	fly machine exec 48e42d9c724718 '/bin/bash -c "cd app && uv run python manage.py shell -c \"from django.contrib.auth.models import User; print(User.objects.count())\""'
+
 # this makes up for the fact that make has no command to show what tasks are defined
 # no attempt was made at a universal solution; you'll need to enhance for any but most basic case
 targets:
