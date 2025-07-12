@@ -1,21 +1,19 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags  %}
+{% load static wagtailcore_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-  <!--  home_page.html -->
-
-  {# include_block page.content #}
+  <!--  templates/home/home_page.html -->
   <article>
-  <header>
-    {{ page.header }}
-  </header>
-  <section id="intro">
-    {{ page.intro|richtext }}
-  </section>
-  <main id="content">
-    {{ page.content }}
-  </main>
+    <header>
+      {{ page.header }}
+    </header>
+    <section id="intro">
+      {{ page.intro|richtext }}
+    </section>
+    <main id="content">
+      {{ page.content }}
+    </main>
   </article>
 {% endblock content %}
