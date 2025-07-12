@@ -9,4 +9,4 @@ class MenuLinkBlock(StructBlock):
     targetUrl = URLBlock(required=False)
 
     class Meta:
-        template = 'home/templates/home/blocks/menu_link.html'
+        template = 'home/blocks/menu_link.html'
