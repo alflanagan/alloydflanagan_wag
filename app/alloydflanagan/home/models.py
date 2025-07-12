@@ -1,5 +1,3 @@
-from django.db.models import FileField
-
 from wagtail.admin.panels import FieldPanel
 from wagtail.blocks import RichTextBlock
 from wagtail.images.blocks import ImageChooserBlock
@@ -11,8 +9,6 @@ from alloydflanagan.home.blocks.header import HeaderBlock
 
 class HomePage(Page):
     intro = RichTextField()
-    # may move resume to AboutPage model if/when we have one
-    resume = FileField(blank=True)
     header = StreamField([
         ('header', HeaderBlock())
     ], blank=True)
@@ -24,6 +20,5 @@ class HomePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('header', classname="full"),
         FieldPanel("intro", classname="full"),
-        FieldPanel("resume", classname="full"),
         FieldPanel("content", classname="full"),
     ]
