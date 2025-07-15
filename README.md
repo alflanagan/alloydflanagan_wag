@@ -1,4 +1,4 @@
-# A Lloyd Flanagan's Personal Website (API)
+# A Lloyd Flanagan's Personal Website
 
 Wagtail version of my personal website
 
