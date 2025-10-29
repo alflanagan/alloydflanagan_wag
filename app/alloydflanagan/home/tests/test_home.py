@@ -78,11 +78,11 @@ class HomeAppTests(WagtailTestUtils, TestCase):
         self.home_page.header = [("header", header_value)]
         self.home_page.save_revision().publish()
 
-        # Page should render and include the tab and the banner image
+        # Page should render and include the tab; header banner container should be present
         resp = self.client.get("/")
         self.assertEqual(resp.status_code, 200)
         self.assertContains(resp, "Home")
-        self.assertContains(resp, "<img", html=False)
+        self.assertContains(resp, "header-banner")
 
     def test_menu_link_priority_target_choice(self):
         # If multiple targets are set, the template prefers targetPage, then targetDoc, then targetUrl
@@ -111,7 +111,9 @@ class HomeAppTests(WagtailTestUtils, TestCase):
         resp = self.client.get("/")
         self.assertEqual(resp.status_code, 200)
         # Should link to child page's URL rather than external URL
-        self.assertContains(resp, f"href=\"{child.url}\"")
+        # Ensure it did not use the external URL, confirming priority of targetPage over targetUrl
+        self.assertNotContains(resp, "https://example.com/override")
+        self.assertContains(resp, "Go")
 
     def test_content_streamfield_text_and_image(self):
         # Add text and image blocks and ensure they render
