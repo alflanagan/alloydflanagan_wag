@@ -1,7 +1,5 @@
 .PHONY: tasks stop start rootshell dbshell
 
-PIP_COMPILE = pip-compile --generate-hashes --allow-unsafe --resolver=backtracking
-
 stop:
 	docker compose down --remove-orphans
 
