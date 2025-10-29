@@ -20,6 +20,10 @@ services:
     environment:
       DATABASE_URL: postgres://wagtail:development@postgres:5432/alloydflanagan
       DJANGO_SETTINGS_MODULE: alloydflanagan.settings.dev
+      DJANGO_SECRET_KEY: soveryverysecret
+      DJANGO_SUPERUSER_EMAIL: lloyd@me.com
+      DJANGO_SUPERUSER_PASSWORD: lloyd
+      DJANGO_SUPERUSER_USERNAME: lloyd
     ports:
       - "8080:8080"
 

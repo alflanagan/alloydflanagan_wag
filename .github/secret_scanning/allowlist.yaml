@@ -1,0 +1,4 @@
+---
+allowlist:
+  - 'DJANGO_SECRET_KEY: soveryverysecret'
+  - 'DJANGO_SUPERUSER_PASSWORD: lloyd'
