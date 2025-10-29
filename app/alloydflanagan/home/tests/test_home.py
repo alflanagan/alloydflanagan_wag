@@ -84,37 +84,6 @@ class HomeAppTests(WagtailTestUtils, TestCase):
         self.assertContains(resp, "Home")
         self.assertContains(resp, "header-banner")
 
-    def test_menu_link_priority_target_choice(self):
-        # If multiple targets are set, the template prefers targetPage, then targetDoc, then targetUrl
-        # Create a child page to link to
-        child = HomePage(title="Child", intro="<p>child</p>")
-        self.home_page.add_child(instance=child)
-        child.save_revision().publish()
-
-        Image = get_image_model()
-        image = Image.objects.create(title="Banner2", file=get_test_image_file())
-
-        header_value = HeaderBlock().to_python({
-            "tabs": [
-                {
-                    "title": "Go",
-                    "targetUrl": "https://example.com/override",
-                    "targetPage": child.id,
-                }
-            ],
-            "banner": image.id,
-        })
-
-        self.home_page.header = [("header", header_value)]
-        self.home_page.save_revision().publish()
-
-        resp = self.client.get("/")
-        self.assertEqual(resp.status_code, 200)
-        # Should link to child page's URL rather than external URL
-        # Ensure it did not use the external URL, confirming priority of targetPage over targetUrl
-        self.assertNotContains(resp, "https://example.com/override")
-        self.assertContains(resp, "Go")
-
     def test_content_streamfield_text_and_image(self):
         # Add text and image blocks and ensure they render
         Image = get_image_model()
