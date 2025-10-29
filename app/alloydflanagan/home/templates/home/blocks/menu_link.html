@@ -1,8 +1,10 @@
 <!-- home/blocks/menu_link.html -->
+{% load wagtailcore_tags %}
 {% if value.targetPage %}
-  <span class="nav-link"><a href="{{ value.targetPage }}">{{ value.title }}</a></span>
+  {% pageurl value.targetPage as target_href %}
+  <span class="nav-link"><a href="{{ target_href }}">{{ value.title }}</a></span>
 {% elif value.targetDoc %}
-  <span class="nav-link"><a href="{{ value.targetDoc }}">{{ value.title }}</a></span>
+  <span class="nav-link"><a href="{{ value.targetDoc.url }}">{{ value.title }}</a></span>
 {% else %}
   <span class="nav-link"><a href="{{ value.targetUrl }}">{{ value.title }}</a></span>
 {% endif %}
