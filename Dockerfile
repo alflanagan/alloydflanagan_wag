@@ -1,4 +1,4 @@
-FROM python:3.12.5-slim-bookworm
+FROM python:3.14.0-trixie
 # node version in slim-bookworm is 18.19.0
 # postgresql client is 15.8
 
