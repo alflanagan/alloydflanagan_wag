@@ -2,11 +2,11 @@
   "name": "alloydflanagan-wag",
   "version": "1.0.0",
   "description": "Packages used by my web site.",
-  "main": "client/index.js",
+  "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "mocha",
     "build": "webpack --config webpack.config.js",
-    "lint": "npx standard ."
+    "lint": "yarn dlx standard ."
   },
   "author": "A. Lloyd Flanagan <a.lloyd.flanagan@gmail.com>",
   "license": "GPL-3.0-or-later",
@@ -17,12 +17,9 @@
     "prettier": "^3.6.2",
     "standard": "^17.1.2",
     "stylelint": "^16.25.0",
-    "stylelint-config-standard": "^39.0.1"
-  },
-  "standard": {
-    "ignore": [
-      "app/alloydflanagan/static/*.js"
-    ]
+    "stylelint-config-standard": "^39.0.1",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1"
   },
   "packageManager": "yarn@4.10.3",
   "dependencies": {
