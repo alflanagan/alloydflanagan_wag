@@ -17,6 +17,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "autotools-language-server>=0.0.22",
     "djhtml>=3.0.10",
     "isort>=7.0.0",
     "ruff>=0.14.2",
