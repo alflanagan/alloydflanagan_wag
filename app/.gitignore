@@ -16,3 +16,5 @@ media/*
 !media/.keep
 static/*
 !static/.keep
+alloydflanagan/static/dist
+!alloydflanagan/static/dist/.keep
