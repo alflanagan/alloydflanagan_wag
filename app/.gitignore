@@ -8,7 +8,6 @@
 !.yarn/versions
 .yarn/install-state.gz
 
-.env*
 sqlite3.db
 
 # files collected by manage.py collectstatic
