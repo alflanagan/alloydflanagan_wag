@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "test": "mocha",
-    "build": "webpack --config webpack.config.js",
-    "lint": "yarn dlx standard ."
+    "build": "yarn run webpack --config webpack.config.js",
+    "lint": "yarn run standard . --ignore 'dist/*'"
   },
   "author": "A. Lloyd Flanagan <a.lloyd.flanagan@gmail.com>",
   "license": "GPL-3.0-or-later",
@@ -19,12 +19,14 @@
     "stylelint": "^16.25.0",
     "stylelint-config-standard": "^39.0.1",
     "webpack": "^5.102.1",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   },
   "packageManager": "yarn@4.10.3",
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
-    "htmx.org": "^2.0.8"
+    "htmx.org": "^2.0.8",
+    "lit": "^3.3.1"
   }
 }
