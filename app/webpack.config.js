@@ -1,5 +1,5 @@
 const path = require('path')
-const webpack = require('webpack')
+// const webpack = require('webpack')
 
 module.exports = {
   entry: './alloydflanagan/static/src/index.js',
@@ -9,4 +9,9 @@ module.exports = {
   },
   mode: 'development',
   target: 'web',
+  module: {
+    rules: [
+      { test: /\.css$/, use: 'css-loader' }
+    ]
+  }
 }
