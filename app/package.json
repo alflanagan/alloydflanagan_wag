@@ -12,6 +12,7 @@
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "chai": "^6.2.0",
+    "css-loader": "^7.1.2",
     "less": "^4.4.2",
     "mocha": "^11.7.4",
     "prettier": "^3.6.2",
