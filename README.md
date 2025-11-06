@@ -2,12 +2,13 @@
 
 Wagtail version of my personal website
 
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Create superuser locally
 
 When running on a local machine, after `docker compose -up -wait` run the following:
 
-```
+```sh
 $ docker compose exec -it wagtail bash
 root@5c5cb7559dca:/app# uv run python manage.py createsuperuser
 Username (leave blank to use 'root'): xxxxx

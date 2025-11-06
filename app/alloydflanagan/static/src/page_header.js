@@ -78,7 +78,7 @@ nav span:nth-child(1) {
     ${banner}
   </div>
     <nav class="nav nav-masthead justify-content-center app-nav">
-    ${ this.tabs.split(',').map( tab => html`<menu-link name="${tab}") />` }
+    ${this.tabs.split(',').map(tab => html`<menu-link name="${tab}" />`)}
     </nav>
   </div>
 </header>
