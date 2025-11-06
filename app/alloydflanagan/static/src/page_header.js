@@ -17,7 +17,8 @@ h3 {
 
 header h3 {
   font-size: 3.5rem;
-  font-family: "Oooh Baby", cursive;
+  font-family: "OoohBaby", Helvetica, Arial, sans-serif;
+  font-style: cursive;
   margin-top: 5rem;
 }
 
@@ -55,6 +56,14 @@ nav span {
 nav span:nth-child(1) {
   margin-left: 0;
 }
+
+img {
+  max-height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
 `
 
   static properties = {
@@ -65,23 +74,27 @@ nav span:nth-child(1) {
   render () {
     let banner = ''
     if (this.banner) {
-      banner = `<img src="${this.banner}" width=800 alt="basic web site banner">`
+      banner = html`<img src="${this.banner}" alt="basic web site banner">`
     }
-    console.log(banner)
+    const tabsList = this.tabs.split(',')
+
+    // note: final <div></div> seems to fix problem where content after page-header
+    // became a child node, not a sibling. Not sure if a bug in Lit or something I did.
     return html`
-<header class="mb-auto">
-  <div class="inner">
-    <div>
-      <h3>A Lloyd Flanagan</h3>
-    </div>
-  <div>
-    ${banner}
-  </div>
-    <nav class="nav nav-masthead justify-content-center app-nav">
-    ${this.tabs.split(',').map(tab => html`<menu-link name="${tab}" />`)}
-    </nav>
-  </div>
-</header>
+      <header class="mb-auto">
+        <div class="inner">
+          <div>
+            <h3>A Lloyd Flanagan</h3>
+          </div>
+          <div>
+            ${banner}
+          </div>
+          <nav class="nav nav-masthead justify-content-center app-nav">
+            ${tabsList.map(tab => html`<menu-link title="${tab}" />`)}
+          </nav>
+        </div>
+      </header>
+      <div></div>
 `
   }
 }
