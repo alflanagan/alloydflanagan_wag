@@ -14,6 +14,7 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     postgresql-client \
     zlib1g-dev \
     libwebp-dev \
+    npm \
  && rm -rf /var/lib/apt/lists/*
 
 # Port used by this container to serve HTTP.
@@ -36,6 +37,10 @@ COPY app /app/
 #TODO: get uv to use system python instead of downloading -- faster, more reliable.
 RUN pip install --no-cache-dir uv==0.9.7 && \
     uv sync --frozen --no-dev
+
+RUN npm install yarn; \
+    /app/node_modules/yarn/bin/yarn; \
+    /app/node_modules/yarn/bin/yarn build
 
 # Note: Fly automatically sets DATABASE_URL
 CMD ["make", "run-server"]
