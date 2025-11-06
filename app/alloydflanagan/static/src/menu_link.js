@@ -16,8 +16,16 @@ span:focus {
 span {
   color: #fff;
   border-bottom-color: #fff;
-  font-family: "OoohBaby";
+  font-family: "OoohBaby", Helvetica, Arial, sans-serif;
   font-size: 24px;
+}
+
+a {
+  color: rgb(40 40 40 / 100%);
+}
+
+a:hover {
+  color: rgb(250 244 200);
 }
 `
 
@@ -32,6 +40,6 @@ span {
   }
 
   render () {
-    return html`<span class="btn"><a href="${ this.href }">${ this.title }</a></span>`
+    return html`<span class="btn"><a href="${this.href}">${this.title}</a></span>`
   }
 }
