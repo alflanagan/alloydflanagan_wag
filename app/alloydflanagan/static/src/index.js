@@ -1,22 +1,14 @@
-import { html, css, LitElement } from 'lit'
+// noinspection ES6UnusedImports
+
+// need to import components even if we don't use them directly
+// so they can all be registered here
 import { MenuLink } from './menu_link.js'
-import Styles from '../css/index.css'
+import { PageHeader } from './page_header.js'
+/* eslint no-unused-vars: off */
+import css from '../css/index.css' // tell webpack to include file
+/* eslint no-unused-vars: on */
 
-export class SimpleGreeting extends LitElement {
-  static styles = css`p { color: blue }`
+/* global customElements */
 
-  static properties = {
-    name: { type: String }
-  }
-
-  constructor () {
-    super()
-    this.name = 'Somebody'
-  }
-
-  render () {
-    return html`<p>Hello, ${this.name}!</p>`
-  }
-}
-customElements.define('simple-greeting', SimpleGreeting)
+customElements.define('page-header', PageHeader)
 customElements.define('menu-link', MenuLink)
