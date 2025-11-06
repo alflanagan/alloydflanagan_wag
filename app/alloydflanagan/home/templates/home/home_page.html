@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% load static wagtailcore_tags %}
 
-{% block body_class %}template-homepage{% endblock %}
+{% block body_class %}template-homepage{% endblock body_class %}
 
 {% block content %}
   <!--  templates/home/home_page.html -->
-  <menu-link title="About" href="about"> </menu-link>
+  <page-header tabs="About,Coding,Blog" banner="david-moum-tHvbNCwZBVA-unsplash.jpg"></page-header>
   <article>
     {{ page.header }}
     <section id="intro">
@@ -15,5 +15,4 @@
       {{ page.content }}
     </main>
   </article>
-  <simple-greeting></simple-greeting>
 {% endblock content %}
