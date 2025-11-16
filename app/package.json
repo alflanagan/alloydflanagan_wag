@@ -13,6 +13,7 @@
   "devDependencies": {
     "chai": "^6.2.0",
     "css-loader": "^7.1.2",
+    "jsdoc": "^4.0.5",
     "less": "^4.4.2",
     "mocha": "^11.7.4",
     "prettier": "^3.6.2",
@@ -23,7 +24,7 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
   },
-  "packageManager": "yarn@4.10.3",
+  "packageManager": "yarn@4.11.0",
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
