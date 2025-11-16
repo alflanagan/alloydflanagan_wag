@@ -2,12 +2,6 @@ import { html, css, LitElement } from 'lit'
 
 export class MenuLink extends LitElement {
   static styles = css`
-@font-face {
-  font-family: "OoohBaby";
-  src:
-    url("../fonts/OoohBaby-Regular.ttf") format("ttf");
-}
-
 span:hover,
 span:focus {
   border-bottom-color: rgba(255 255 255 / 25%);
@@ -16,7 +10,7 @@ span:focus {
 span {
   color: #fff;
   border-bottom-color: #fff;
-  font-family: "OoohBaby", Helvetica, Arial, sans-serif;
+  font-family: "Oooh Baby", Helvetica, Arial, sans-serif;
   font-size: 24px;
 }
 
@@ -36,7 +30,6 @@ a:hover {
 
   constructor () {
     super()
-    this.href = 'https://www.example.com'
   }
 
   render () {
