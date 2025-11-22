@@ -1,5 +1,5 @@
 # -*- mode: makefile-gmake; -*-
-cd.PHONY: tasks stop start rootshell dbshell
+.PHONY: tasks stop start rootshell dbshell
 
 stop:
 	docker compose down --remove-orphans
