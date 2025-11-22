@@ -17,5 +17,4 @@ app/.gitignore
 app/.ropeproject
 app/.yarnrc.yml
 app/.stylelintrc.json
-app/Makefile
 app/media/
