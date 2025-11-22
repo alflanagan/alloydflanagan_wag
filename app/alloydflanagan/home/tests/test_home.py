@@ -7,8 +7,6 @@ from wagtail.test.utils import WagtailTestUtils
 
 from alloydflanagan.home.models import HomePage
 from alloydflanagan.home.blocks.header import HeaderBlock
-from alloydflanagan.home.blocks.menu_link import MenuLinkBlock
-
 
 @override_settings(STATICFILES_STORAGE="django.contrib.staticfiles.storage.StaticFilesStorage")
 class HomeAppTests(WagtailTestUtils, TestCase):
