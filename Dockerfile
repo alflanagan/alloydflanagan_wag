@@ -14,7 +14,7 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     postgresql-client \
     zlib1g-dev \
     libwebp-dev \
-    npm \
+    node \
  && rm -rf /var/lib/apt/lists/*
 
 # Port used by this container to serve HTTP.
@@ -38,7 +38,10 @@ COPY app /app/
 RUN pip install --no-cache-dir uv==0.9.7 && \
     uv sync --frozen --no-dev
 
-RUN npm install yarn; \
+# hadolint ignore=DL3016
+RUN npm install -g npm; \
+    corepack enable; \
+    npm install yarn; \
     /app/node_modules/yarn/bin/yarn; \
     /app/node_modules/yarn/bin/yarn build
 
