@@ -1,6 +1,4 @@
 FROM python:3.14.0-trixie
-# node version in slim-bookworm is 18.19.0
-# postgresql client is 15.8
 
 SHELL ["/bin/bash", "-euo", "pipefail", "-c"]
 
@@ -14,7 +12,7 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     postgresql-client \
     zlib1g-dev \
     libwebp-dev \
-    node \
+    npm \
  && rm -rf /var/lib/apt/lists/*
 
 # Port used by this container to serve HTTP.
@@ -40,10 +38,14 @@ RUN pip install --no-cache-dir uv==0.9.7 && \
 
 # hadolint ignore=DL3016
 RUN npm install -g npm; \
-    corepack enable; \
-    npm install yarn; \
-    /app/node_modules/yarn/bin/yarn; \
-    /app/node_modules/yarn/bin/yarn build
+    npm install -g n; \
+    n 24
+
+RUN corepack enable
+
+# hadolint ignore=DL3016
+RUN yarn; \
+    yarn build
 
 # Note: Fly automatically sets DATABASE_URL
 CMD ["make", "run-server"]
