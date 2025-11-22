@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+find ~/Devel/personal/web/alloydflanagan_wag \
+    -name .yarn -prune \
+    -o -name .venv -prune \
+    -o -name .git -prune \
+    -o -type f -exec grep "$*" '{}' +
