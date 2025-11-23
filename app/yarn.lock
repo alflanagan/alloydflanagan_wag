@@ -1075,6 +1075,7 @@ __metadata:
     bootstrap: "npm:^5.3.8"
     chai: "npm:^6.2.0"
     css-loader: "npm:^7.1.2"
+    eslint-plugin-lit: "npm:^2.1.1"
     htmx.org: "npm:^2.0.8"
     jsdoc: "npm:^4.0.5"
     less: "npm:^4.4.2"
@@ -2666,6 +2667,18 @@ __metadata:
   peerDependencies:
     eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
   checksum: 10c0/5f35dfbf4e8e67f741f396987de9504ad125c49f4144508a93282b4ea0127e052bde65ab6def1f31b6ace6d5d430be698333f75bdd7dca3bc14226c92a083196
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-lit@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "eslint-plugin-lit@npm:2.1.1"
+  dependencies:
+    parse5: "npm:^6.0.1"
+    parse5-htmlparser2-tree-adapter: "npm:^6.0.1"
+  peerDependencies:
+    eslint: ">= 8"
+  checksum: 10c0/f1dbd6f5f548bd68ad5b9ef548e2721d266cde89dda00ae3d6a8d9f2151bf04ba823a745b7327cfc18edc7e4f0cbdfffc5febb86c35371197856ad5853d8d814
   languageName: node
   linkType: hard
 
@@ -5591,6 +5604,22 @@ __metadata:
   version: 1.0.1
   resolution: "parse-node-version@npm:1.0.1"
   checksum: 10c0/999cd3d7da1425c2e182dce82b226c6dc842562d3ed79ec47f5c719c32a7f6c1a5352495b894fc25df164be7f2ede4224758255da9902ddef81f2b77ba46bb2c
+  languageName: node
+  linkType: hard
+
+"parse5-htmlparser2-tree-adapter@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "parse5-htmlparser2-tree-adapter@npm:6.0.1"
+  dependencies:
+    parse5: "npm:^6.0.1"
+  checksum: 10c0/dfa5960e2aaf125707e19a4b1bc333de49232eba5a6ffffb95d313a7d6087c3b7a274b58bee8d3bd41bdf150638815d1d601a42bbf2a0345208c3c35b1279556
+  languageName: node
+  linkType: hard
+
+"parse5@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "parse5@npm:6.0.1"
+  checksum: 10c0/595821edc094ecbcfb9ddcb46a3e1fe3a718540f8320eff08b8cf6742a5114cce2d46d45f95c26191c11b184dcaf4e2960abcd9c5ed9eb9393ac9a37efcfdecb
   languageName: node
   linkType: hard
 

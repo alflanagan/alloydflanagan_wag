@@ -6,13 +6,15 @@
   "scripts": {
     "test": "mocha",
     "build": "yarn run webpack --config webpack.config.js",
-    "lint": "yarn run standard . --ignore 'dist/*'"
+    "lint": "yarn run standard",
+    "format": "yarn run standard --fix"
   },
   "author": "A. Lloyd Flanagan <a.lloyd.flanagan@gmail.com>",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "chai": "^6.2.0",
     "css-loader": "^7.1.2",
+    "eslint-plugin-lit": "^2.1.1",
     "jsdoc": "^4.0.5",
     "less": "^4.4.2",
     "mocha": "^11.7.4",
@@ -30,5 +32,13 @@
     "bootstrap": "^5.3.8",
     "htmx.org": "^2.0.8",
     "lit": "^3.3.1"
+  },
+  "standard": {
+    "ignore": [
+      "**/vendor/"
+    ],
+    "extends": [
+      "plugin:lit/recommended"
+    ]
   }
 }
