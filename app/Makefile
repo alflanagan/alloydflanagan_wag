@@ -1,11 +1,12 @@
 # -*- mode: makefile-gmake; -*-
 PYTHON=uv run --link-mode=copy python
+SERVER_ARGS=--access-logfile - --timeout 30 --bind 0.0.0.0:8080 --error-logfile -
 
 run-server:
 	echo "Starting server..."; \
 	$(PYTHON) manage.py migrate; \
 	$(PYTHON) manage.py collectstatic --noinput; \
-	uv run gunicorn --timeout 30 alloydflanagan.wsgi:application --bind 0.0.0.0:8080 --log-file -; \
+	uv run gunicorn alloydflanagan.wsgi:application $(SERVER_ARGS); \
 	echo "Server is up."
 
 djhtml:
