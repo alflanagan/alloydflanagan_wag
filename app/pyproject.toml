@@ -13,6 +13,7 @@ dependencies = [
     "gunicorn>=23.0.0",
     "psycopg>=3.2.12",
     "wagtail>=7.1.2",
+    "whitenoise>=6.11.0",
 ]
 
 [dependency-groups]
