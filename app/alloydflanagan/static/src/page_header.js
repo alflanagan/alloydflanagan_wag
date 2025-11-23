@@ -69,7 +69,7 @@ export class PageHeader extends LitElement {
   static properties = {
     banner: { type: String },
     tabs: { type: String }, // comma-separated
-    urls: { type: String }, // comma-separated
+    urls: { type: String } // comma-separated
   }
 
   /** Returns a single array whose elements are 2-tuples of successive elements of a and b.

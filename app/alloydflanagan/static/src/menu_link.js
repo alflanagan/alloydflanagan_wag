@@ -28,10 +28,6 @@ a:hover {
     title: { type: String }
   }
 
-  constructor () {
-    super()
-  }
-
   render () {
     return html`<span class="btn"><a href="${this.href}">${this.title}</a></span>`
   }
