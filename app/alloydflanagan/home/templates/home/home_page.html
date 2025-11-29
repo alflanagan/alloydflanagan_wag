@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags %}
+{% load static %}
 
 {% block body_class %}template-homepage{% endblock body_class %}
 
@@ -9,7 +9,7 @@
     <article>
     {{ page.header }}
     <section id="intro">
-      {{ page.intro|richtext }}
+      {{ page.intro }}
     </section>
     <main id="content">
       {{ page.content }}
