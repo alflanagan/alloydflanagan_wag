@@ -5,7 +5,6 @@
 
 {% block content %}
   <!--  templates/home/home_page.html -->
-  <!-- <page-header tabs="About,Coding,Blog" banner="/static/images/david-moum-tHvbNCwZBVA-unsplash-banner.jpg"></page-header> -->
   <page-header tabs="About Me,About This Site,Blog" urls="/about_me,/about_this,/blog"></page-header>
     <article>
     {{ page.header }}
@@ -16,4 +15,10 @@
       {{ page.content }}
     </main>
   </article>
+  <footer>
+  <unsplash-credit
+    photographer="David Moum"
+    title="Download free do whatever you want high-resolution photos from David Moum"
+    href="https://unsplash.com/@davidmoum?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"></unsplash-credit>
+  </footer>
 {% endblock content %}
