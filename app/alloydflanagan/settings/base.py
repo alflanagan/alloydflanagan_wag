@@ -10,6 +10,7 @@ import dj_database_url
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -22,7 +23,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "alloydflanagan.blog",
     "alloydflanagan.home",
     "alloydflanagan.search",
@@ -40,6 +40,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "alloydflanagan.urls"
+
+# Tell django models which field to use for auto-increment fields
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 TEMPLATES = [
     {
@@ -110,7 +113,7 @@ STATICFILES_FINDERS = [
 # See https://docs.djangoproject.com/en/5.2/ref/contrib/staticfiles/#manifeststaticfilesstorage
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 # this should contain any static files that aren't specific to an app
-STATICFILES_DIRS = [os.path.join(PROJECT_DIR, "static")] # /app/alloydflanagan/static
+STATICFILES_DIRS = [os.path.join(PROJECT_DIR, "static")]  # /app/alloydflanagan/static
 STATIC_ROOT = os.path.join(BASE_DIR, "static")  # /app/static
 STATIC_URL = "/static/"
 
