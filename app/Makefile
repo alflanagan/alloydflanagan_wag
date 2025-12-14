@@ -1,6 +1,8 @@
 # -*- mode: makefile-gmake; -*-
 PYTHON=uv run --link-mode=copy python
 SERVER_ARGS=--access-logfile - --timeout 30 --bind 0.0.0.0:8080 --error-logfile -
+EXCLUDE_DIRS=-name .venv -prune -o -name .yarn -prune -o -name vendor -prune -o -name dist -prune -o
+
 
 run-server:
 	echo "Starting server..."; \
@@ -20,5 +22,24 @@ isort:
 
 black:
 	uv run black alloydflanagan
+
+test:
+	node `yarn bin mocha`
+
+build:
+	yarn run webpack --config webpack.config.js
+
+lintjs:
+	yarn run standard
+
+formatjs:
+	yarn run standard --fix
+
+
+# checks css in lit elements (see .stylintrc.json)
+lintcss:
+	find . $(EXCLUDE_DIRS) -name '*.js' -exec yarn stylelint --fix '{}' +
+	find . $(EXCLUDE_DIRS) -name '*.css' -exec yarn stylelint --fix '{}' +
+
 
 lint: isort black flake8 djhtml
