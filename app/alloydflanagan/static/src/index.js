@@ -5,7 +5,5 @@ import { PageHeader } from './page_header.js'
 // tell webpack to include styles
 import css from '../css/index.css' // eslint-disable-line
 
-/* global customElements */
-
 customElements.define('page-header', PageHeader)
 customElements.define('menu-link', MenuLink)
