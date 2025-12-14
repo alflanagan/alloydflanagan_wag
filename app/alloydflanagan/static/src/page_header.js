@@ -17,8 +17,7 @@ export class PageHeader extends LitElement {
 
   header h3 {
     font-size: 3.5rem;
-    font-family: "Oooh Baby", Helvetica, Arial, sans-serif;
-    font-style: oblique;
+    font-family: Spectral, "Times New Roman", serif;
     margin-top: 5rem;
   }
 
@@ -28,7 +27,7 @@ export class PageHeader extends LitElement {
 
   nav menu-link {
     padding: 0.25rem 0;
-    font-family: "Oooh Baby", serif;
+    font-family: Karla, serif;
     font-weight: 700;
 
     /* font-variant: small-caps; */
@@ -39,13 +38,13 @@ export class PageHeader extends LitElement {
     font-size: 2.5rem;
   }
 
-  nav menu-link:hover,
-  nav menu-link:focus {
-    border-bottom-color: rgba(255 255 255 / 25%);
-  }
-
   menu-link + menu-link {
     margin-left: 1rem;
+  }
+
+  nav menu-link:hover,
+  nav menu-link:focus {
+    border-bottom-color: rgb(255 255 255 / 25%);
   }
 
   nav span {

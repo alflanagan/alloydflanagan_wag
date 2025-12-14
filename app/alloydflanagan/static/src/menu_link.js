@@ -2,16 +2,17 @@ import { html, css, LitElement } from 'lit'
 
 export class MenuLink extends LitElement {
   static styles = css`
-span:hover,
-span:focus {
-  border-bottom-color: rgba(255 255 255 / 25%);
-}
-
 span {
   color: #fff;
   border-bottom-color: #fff;
-  font-family: "Oooh Baby", Helvetica, Arial, sans-serif;
+  /* font-family: "Oooh Baby", Helvetica, Arial, sans-serif; */
+  font-family: Karla, sans-serif;
   font-size: 24px;
+}
+
+span:hover,
+span:focus {
+  border-bottom-color: rgb(255 255 255 / 25%);
 }
 
 a {
