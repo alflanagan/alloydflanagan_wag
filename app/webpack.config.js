@@ -11,32 +11,7 @@ module.exports = {
   target: 'web',
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-            },
-          },
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: [
-                  [
-                    "postcss-preset-env",
-                    {
-                      // Options
-                    },
-                  ],
-                ],
-              },
-            },
-          },
-        ],
-      },
+      { test: /\.css$/, use: 'css-loader' }
     ]
   }
 }

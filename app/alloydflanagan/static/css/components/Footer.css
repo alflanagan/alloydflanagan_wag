@@ -1,14 +1,12 @@
-@import url("../colors.css");
-
 footer {
   flex-shrink: 0;
 }
 
 .mastfoot .tech-note {
-  font-family: Spectral, sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 1rem;
   border-width: 1px;
-  border-color: var(--dark-grey);
+  border-color: #595959;
   border-style: solid;
 
   /* max-width: 400px; */
@@ -23,7 +21,7 @@ footer {
   font-family: Roboto, sans-serif;
 }
 
-@media (width >= 768px) {
+@media (min-width: 768px) {
   .address {
     margin-top: 100px;
   }
@@ -63,11 +61,11 @@ footer {
 }
 
 .app-footer .inner .tech-note {
-  background-color: var(--light-grey);
+  background-color: #181818;
 }
 
 #background-image-box {
-  background-color: var(--light-grey);
+  background-color: lightgrey;
   color: black;
   padding-left: 3px;
 }
