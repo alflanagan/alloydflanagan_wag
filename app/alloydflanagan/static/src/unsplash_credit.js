@@ -1,5 +1,7 @@
 import { html, css, LitElement } from 'lit'
-/* eslint-env browser */
+
+/* global customElements */
+
 export class UnsplashCredit extends LitElement {
   static styles = css`
     #us-logo {
