@@ -2,31 +2,23 @@ import { html, css, LitElement } from 'lit'
 
 export class MenuLink extends LitElement {
   static styles = css`
-span {
-  color: #fff;
-  border-bottom-color: #fff;
-  /* font-family: "Oooh Baby", Helvetica, Arial, sans-serif; */
+a {
   font-family: Karla, sans-serif;
   font-size: 24px;
+  color: black;
+  border-bottom-color: black;
+  border-width: 2px;
 }
 
-span:hover,
-span:focus {
-  border-bottom-color: rgb(255 255 255 / 25%);
-}
-
-a {
-  color: rgb(40 40 40 / 100%);
-}
-
-a:hover {
-  color: rgb(250 244 200);
+a:hover, a:focus {
+  color: var(--background);
+  border-bottom-color: var(--background);
 }
 `
 
   static properties = {
     href: { type: String },
-    title: { type: String }
+    title: { type: String },
   }
 
   render () {
