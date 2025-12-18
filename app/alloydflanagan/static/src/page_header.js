@@ -3,40 +3,38 @@ import { html, css, LitElement } from 'lit'
 
 export class PageHeader extends LitElement {
   static styles = css`
-  header {
-    margin-bottom: 2rem;
-    margin-right: 15%;
-    margin-left: 15%;
-  }
+.page-header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-right: 5%;
+  margin-left: 5%;
+  background-color: var(--slate);
+}
 
-  h3 {
-    margin-bottom: 0;
-    color: black;
-    margin-top: 2rem;
-  }
+header h3 {
+  color: black;
+  font-size: 3.5rem;
+  font-family: Spectral, "Times New Roman", serif;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
 
-  header h3 {
-    font-size: 3.5rem;
-    font-family: Spectral, "Times New Roman", serif;
-    margin-top: 5rem;
-  }
+nav {
+  margin-top: .5rem;
+}
 
-  nav {
-    margin-top: 1rem;
-  }
+nav menu-link {
+  padding: 0;
+  font-family: Karla, serif;
+  font-weight: 700;
 
-  nav menu-link {
-    padding: 0.25rem 0;
-    font-family: Karla, serif;
-    font-weight: 700;
+  /* font-variant: small-caps; */
+  color: white; /* rgb(255 255 255 / 100%); */
+  background-color: transparent;
 
-    /* font-variant: small-caps; */
-    color: rgb(255 255 255 / 100%);
-    background-color: transparent;
-
-    /* border-bottom: 0.25rem solid transparent; */
-    font-size: 2.5rem;
-  }
+  /* border-bottom: 0.25rem solid transparent; */
+  font-size: 2.5rem;
+}
 
   menu-link + menu-link {
     margin-left: 1rem;
@@ -96,20 +94,20 @@ export class PageHeader extends LitElement {
     // note: final <div></div> seems to fix problem where content after page-header
     // became a child node, not a sibling. Not sure if a bug in Lit or something I did.
     return html`
-      <header class="mb-auto">
-        <div class="inner">
-          <div>
-            <h3>A Lloyd Flanagan</h3>
-          </div>
-          <div>
-            ${banner}
-          </div>
-          <nav class="nav nav-masthead justify-content-center app-nav">
-            ${linkList.map(tab => html`<menu-link title="${tab[0]}" href="${tab[1]}" />`)}
-          </nav>
-        </div>
-      </header>
-      <div></div>
+<header class="page-header">
+  <div class="inner">
+    <div>
+      <h3>A Lloyd Flanagan's Website</h3>
+    </div>
+    <div>
+      ${banner}
+    </div>
+    <nav class="nav nav-masthead justify-content-center app-nav">
+      ${linkList.map(tab => html`<menu-link title="${tab[0]}" href="${tab[1]}" />`)}
+    </nav>
+  </div>
+</header>
+<div></div>
 `
   }
 }
