@@ -41,7 +41,10 @@
     </div>
 
     {# Global javascript #}
-    <script type="text/javascript" src="{% static 'dist/bundle.js' %}" defer="true"></script>
+    <script
+      type="text/javascript"
+      src="{% static 'dist/bundle.js' %}"
+      defer="defer"></script>
 
     {% block extra_js %}
 
