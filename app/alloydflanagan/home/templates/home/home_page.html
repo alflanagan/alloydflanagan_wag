@@ -3,6 +3,10 @@
 
 {% block body_class %}template-homepage{% endblock body_class %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}" />
+{% endblock extra_css %}
+
 {% block content %}
   <!--  templates/home/home_page.html -->
   <page-header tabs="About Me,About This Site,Blog" urls="/about_me,/about_this,/blog"></page-header>

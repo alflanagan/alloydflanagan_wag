@@ -90,13 +90,3 @@ code {
     transform: translateY(0);
   }
 }
-
-.home-intro {
-  color: var(--dark-grey);
-}
-
-hero-block {
-  margin-top: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-}
