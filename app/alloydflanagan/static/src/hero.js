@@ -5,19 +5,26 @@ export class HeroBlock extends LitElement {
 
   @import("../css/colors.css");
 
+  :host {
+    width: 100%;
+    display: block;
+  }
+
   .hero-block {
     display: block;
     width: 80%;
     border-color: var(--slate);
     border-width: 2px;
+    border-style: solid;
+    padding: 1rem;
   }
 
-  .hero-block__title {
+  .title {
     font-size: 26px;
     color black;
   }
 
-  .hero-block__content {
+  .content {
     color: var(--dark-grey);
   }
 `
@@ -29,8 +36,8 @@ export class HeroBlock extends LitElement {
   render () {
     return html`
     <div class="hero-block">
-      <div class="hero-block__title">${this.title}</div>
-      <div class="hero-block__content"><slot></slot></div>
+      <div class="title">${this.title}</div>
+      <div class="content"><slot></slot></div>
     </div>
   `
   }
