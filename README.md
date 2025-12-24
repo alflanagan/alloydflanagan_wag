@@ -4,6 +4,8 @@ Wagtail version of my personal website
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+[![Powered by Django.](https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif)](https://www.djangoproject.com)
+
 ## Create superuser locally
 
 When running on a local machine, after `docker compose -up -wait` run the following:
