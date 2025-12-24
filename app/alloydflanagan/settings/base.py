@@ -23,9 +23,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
     "alloydflanagan.blog",
     "alloydflanagan.home",
     "alloydflanagan.search",
+    "alloydflanagan.about_me",
 ]
 
 MIDDLEWARE = [

@@ -9,7 +9,7 @@
 
 {% block content %}
   <!--  templates/home/home_page.html -->
-  <page-header tabs="About Me,About This Site,Blog" urls="/about_me,/about_this,/blog"></page-header>
+  <page-header tabs="About Me,About This Site,Blog" urls="{% url 'about_me' %},/about_this,/blog"></page-header>
   <article>
     <hero-block title="Welcome">This is my personal/professional website.</hero-block>
     <main id="content">
