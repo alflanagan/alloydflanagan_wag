@@ -2,7 +2,7 @@ const path = require('path')
 // const webpack = require('webpack')
 
 module.exports = {
-  entry: './alloydflanagan/static/src/index.js',
+  entry: './alloydflanagan/src/index.js',
   output: {
     path: path.resolve(__dirname, './alloydflanagan/static/dist'),
     filename: 'bundle.js'
