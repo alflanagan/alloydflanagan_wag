@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha",
     "build": "yarn run webpack --config webpack.config.js",
+    "watch": "yarn run webpack --config webpack.config.js --watch",
     "lintjs": "yarn run standard",
     "formatjs": "yarn run standard --fix",
     "lintcss": "find . -name .venv -prune -o -name .yarn -prune -o -name vendor -prune -o -name dist -prune -o -name '*.js' -exec yarn stylelint --fix '{}' +; find . -name .venv -prune -o -name .yarn -prune -o -name vendor -prune -o -name dist -prune -o -name '*.css' -exec yarn stylelint --fix '{}' +"
