@@ -6,6 +6,11 @@ Wagtail version of my personal website
 
 [![Powered by Django.](https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif)](https://www.djangoproject.com)
 
+**If you're seeing this on github.com, it's just a mirror; the actual project is at https://gitlab.com/a-lloyd-flanagan-group/alloydflanagan_wag**
+
+# Set up project
+
+## .. Lots of Stuff I Haven't Documented Yet
 ## Create superuser locally
 
 When running on a local machine, after `docker compose -up -wait` run the following:
