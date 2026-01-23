@@ -2,6 +2,7 @@
 @import url("components/Footer.css");
 @import url("components/Header.css");
 */
+@import url("./variables.css")
 @import url("./colors.css");
 @import url("../fonts/Fonts.css");
 @import url("../vendor/bootstrap-5.3.8-dist/css/bootstrap.min.css");
