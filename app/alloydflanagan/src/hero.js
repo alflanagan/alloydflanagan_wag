@@ -3,29 +3,29 @@ import { html, css, LitElement } from 'lit'
 export class HeroBlock extends LitElement {
   static styles = css`
 
-  @import("../css/colors.css");
+  @import("../css/variables.css");
 
   :host {
-    width: 100%;
+    width: var(--max-width-lg);
     display: block;
   }
 
   .hero-block {
     display: block;
     width: 80%;
-    border-color: var(--slate);
-    border-width: 2px;
+    border-color: var(--color-border);
+    border-width: var(--border-width);
     border-style: solid;
     padding: 1rem;
   }
 
   .title {
-    font-size: 26px;
-    color black;
+    font-size: var(--text-xl);
+    color: var(--color-text-primary);
   }
 
   .content {
-    color: var(--dark-grey);
+    color: var(--color-text-muted);
   }
 `
 
