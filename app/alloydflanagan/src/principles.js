@@ -14,8 +14,8 @@ export class PrinciplesBlock extends LitElement {
     }
   `
 
-  render() {
-  return html`
+  render () {
+    return html`
     <div class="principles">
   <h3 id="heading">Software Development Principles</h3>
   <ul>
@@ -29,5 +29,6 @@ export class PrinciplesBlock extends LitElement {
     <li>Minimize dependencies.</li>
   </ul>
     </div>
-  `}
+  `
+  }
 }

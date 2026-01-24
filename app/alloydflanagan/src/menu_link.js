@@ -18,7 +18,7 @@ a:hover, a:focus {
 
   static properties = {
     href: { type: String },
-    title: { type: String },
+    title: { type: String }
   }
 
   render () {
