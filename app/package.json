@@ -10,7 +10,8 @@
     "watch": "yarn run webpack --config webpack.config.cjs --watch",
     "lintjs": "yarn run standard",
     "formatjs": "yarn run standard --fix",
-    "stylelint": "yarn exec stylelint '**/*.js' '**/*.css'"
+    "stylelint": "yarn exec stylelint '**/*.js' '**/*.css'",
+    "style-fix": "yarn exec stylelint --fix '**/*.js' '**/*.css'"
   },
   "author": "A. Lloyd Flanagan <a.lloyd.flanagan@gmail.com>",
   "license": "GPL-3.0-or-later",
