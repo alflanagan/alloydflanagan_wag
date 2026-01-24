@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Packages used by my web site.",
   "private": true,
+  "type": "module",
   "scripts": {
     "test": "mocha",
     "build": "yarn run webpack --config webpack.config.js",
@@ -22,6 +23,8 @@
     "globals": "^16.5.0",
     "jsdoc": "^4.0.5",
     "mocha": "^11.7.4",
+    "postcss": "^8.5.6",
+    "postcss-styled-syntax": "^0.7.1",
     "prettier": "^3.6.2",
     "standard": "^17.1.2",
     "stylelint": "^16.25.0",
