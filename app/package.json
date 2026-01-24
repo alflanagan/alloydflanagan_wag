@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "build": "yarn run webpack --config webpack.config.js",
-    "watch": "yarn run webpack --config webpack.config.js --watch",
+    "build": "yarn run webpack --config webpack.config.cjs",
+    "watch": "yarn run webpack --config webpack.config.cjs --watch",
     "lintjs": "yarn run standard",
     "formatjs": "yarn run standard --fix",
     "stylelint": "yarn exec stylelint '**/*.js' '**/*.css'"

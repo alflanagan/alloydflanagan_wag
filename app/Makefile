@@ -27,7 +27,7 @@ test:
 	node `yarn bin mocha`
 
 build:
-	yarn run webpack --config webpack.config.js
+	yarn run webpack --config webpack.config.cjs
 
 lintjs:
 	yarn run standard
@@ -38,8 +38,6 @@ formatjs:
 
 # checks css in lit elements (see .stylintrc.json)
 lintcss:
-	find . $(EXCLUDE_DIRS) -name '*.js' -exec yarn stylelint --fix '{}' +
-	find . $(EXCLUDE_DIRS) -name '*.css' -exec yarn stylelint --fix '{}' +
-
+	yarn run stylelint
 
 lint: isort black flake8 djhtml
