@@ -113,3 +113,37 @@
   --z-sticky: 20;
   --z-modal: 30;
 }
+
+/* ======================================
+   Dark mode
+   ====================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Backgrounds */
+    --color-bg: #0f172a;          /* deep slate */
+    --color-bg-muted: #020617;    /* near-black */
+
+    /* Text */
+    --color-text-primary: #e5e7eb;
+    --color-text-secondary: #9ca3af;
+    --color-text-muted: #6b7280;
+
+    /* Borders */
+    --color-border: #1f2933;
+
+    /* Accent */
+    --color-accent: #60a5fa;
+    --color-accent-hover: #93c5fd;
+    --color-accent-muted: #1e3a8a;
+
+    /* Status */
+    --color-success: #22c55e;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+
+    /* Shadows (reduced in dark mode) */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.5);
+  }
+}
