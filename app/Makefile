@@ -35,9 +35,10 @@ lintjs:
 formatjs:
 	yarn run standard --fix
 
-
-# checks css in lit elements (see .stylintrc.json)
 lintcss:
 	yarn run stylelint
+
+formatcss:
+	yarn run style-fix
 
 lint: isort black flake8 djhtml
