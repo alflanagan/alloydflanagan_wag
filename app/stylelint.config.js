@@ -11,7 +11,7 @@ export default {
     'scale-unlimited/declaration-strict-value': '/color|font|margin/'
   },
   extends: ['stylelint-config-standard'],
-  plugins: ['stylelint-no-unresolved-module', "stylelint-declaration-strict-value"],
+  plugins: ['stylelint-no-unresolved-module', 'stylelint-declaration-strict-value'],
   overrides: [
     {
       files: ['**/*.{js,jsx,ts,tsx}'],
