@@ -2,12 +2,14 @@ import { html, css, LitElement } from 'lit'
 
 export class AboutSection extends LitElement {
   static styles = css`
-    section {
-      border-style: solid;
-      border-color: black;
-      border-width: 2px;
-    }
-  `
+@import("../../static/css/variables.css");
+
+section {
+  border-style: solid;
+  border-color: var(--border-color);
+  border-width: var(--border-width);
+}
+`
 
   static properties = {
     id: { type: String }
@@ -19,7 +21,7 @@ export class AboutSection extends LitElement {
       <section>
         <h3>About</h3>
         <p>
-          I’m a software engineer with X years of experience
+          I’m a software engineer with more than 15 years of experience
           building SaaS platforms, APIs, and infrastructure.
         </p>
         <p>
