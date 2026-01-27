@@ -1,6 +1,5 @@
 @import url("./variables.css");
 @import url("../vendor/bootstrap-5.3.8-dist/css/bootstrap.min.css");
-@import url("./components/Tabs.css");
 
 body {
   background: var(--color-bg);
