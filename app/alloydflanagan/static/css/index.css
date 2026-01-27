@@ -1,6 +1,6 @@
 @import url("./variables.css");
 @import url("../vendor/bootstrap-5.3.8-dist/css/bootstrap.min.css");
-@import url("components/Tabs.css");
+@import url("./components/Tabs.css");
 
 body {
   background: var(--color-bg);
@@ -19,4 +19,8 @@ a {
 a:hover {
   color: var(--color-accent-hover);
   text-decoration: underline;
+}
+
+.cover-container {
+  max-width: var(--max-width-md);
 }
