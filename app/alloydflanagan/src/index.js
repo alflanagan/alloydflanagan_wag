@@ -5,9 +5,11 @@ import { PageHeader } from './page_header.js'
 import { HeroBlock } from './hero.js'
 import { AboutSection } from '../about_me/src/about_section.js'
 import { PrinciplesBlock } from './principles.js'
+import { UnsplashCredit } from './unsplash_credit.js'
 
 window.customElements.define('page-header', PageHeader)
 window.customElements.define('menu-link', MenuLink)
 window.customElements.define('hero-block', HeroBlock)
 window.customElements.define('about-section', AboutSection)
 window.customElements.define('principles-block', PrinciplesBlock)
+window.customElements.define('unsplash-credit', UnsplashCredit)

@@ -3,20 +3,18 @@ import { html, css, LitElement } from 'lit'
 
 export class PageHeader extends LitElement {
   static styles = css`
-@import("../css/variables.css");
+@import("../static/css/variables.css");
 
 .page-header {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-right: 5%;
-  margin-left: 5%;
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-4);
   background-color: var(--color-bg);
 }
 
 header h3 {
   color: var(--color-text-primary);
   font-size: var(--text-3xl);
-  margin-block: 0;
+  margin-block: var(--space-0);
 }
 
 nav {
@@ -24,11 +22,11 @@ nav {
 }
 
 nav menu-link {
-  padding: 0;
+  padding: var(--space-0);
   font-family: var(--font-sans);
   font-weight: var(--font-medium);
   color: var(--color-text-primary);
-  background-color: transparent;
+  background-color: var(--color-transparent);
   font-size: var(--text-base);
 }
 
@@ -38,7 +36,7 @@ menu-link + menu-link {
 
 nav menu-link:hover,
 nav menu-link:focus {
-  border-bottom-color: rgb(255 255 255 / 25%);
+  border-bottom-color: var(--color-text-secondary);
 }
 
 nav span {
@@ -47,7 +45,7 @@ nav span {
 }
 
 nav span:nth-child(1) {
-  margin-left: 0;
+  margin-left: var(--space-0);
 }
 
 img {
