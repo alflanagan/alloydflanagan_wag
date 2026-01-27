@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "alloydflanagan.home",
     "alloydflanagan.search",
     "alloydflanagan.about_me",
+    "alloydflanagan.design_system",
 ]
 
 MIDDLEWARE = [
