@@ -2,23 +2,23 @@ import { html, css, LitElement } from 'lit'
 
 export class MenuLink extends LitElement {
   static styles = css`
+  @import("../static/css/variables.css");
+
 a {
-  font-family: Karla, sans-serif;
-  font-size: 24px;
-  color: black;
-  border-bottom-color: black;
-  border-width: 2px;
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+  text-decoration: none;
 }
 
 a:hover, a:focus {
-  color: var(--background);
-  border-bottom-color: var(--background);
+  text-decoration: underline;
 }
 `
 
   static properties = {
     href: { type: String },
-    title: { type: String },
+    title: { type: String }
   }
 
   render () {

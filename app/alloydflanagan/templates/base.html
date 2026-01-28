@@ -16,14 +16,10 @@
       {% endblock title_suffix %}
     </title>
     <meta name="description" content="A Lloyd Flanagan's Personal Website" />
-    <!-- <link rel="apple-touch-icon" href="{% static 'images/logo192.png' %}" /> -->
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <!-- <link rel="manifest" href="{%  static 'manifest.json' %}" /> -->
-    <!-- TODO: integrate with webpack -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cantata+One|Roboto&display=swap">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
     {# Global stylesheets #}
     <link rel="stylesheet" href="{% static 'css/index.css' %}" />

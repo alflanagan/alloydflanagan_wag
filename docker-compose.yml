@@ -4,7 +4,7 @@ services:
   wagtail:
     build:
       context: .
-    command: make run-server
+    command: make dev-server
     volumes:
       # don't link .venv! TODO: find simpler dir organization
       - ./app/.yarn:/app/.yarn:delegated

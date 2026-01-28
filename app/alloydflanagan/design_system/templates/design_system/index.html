@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+{% load static %}
+
+{# jdkhgv.jhb.kjbgvljfkyhtdk,dkmgfdcm #}
+{% block extra_css %}
+<style>
+  @import url({% static 'css/variables.css' %});
+  @import url({% static 'design_system/css/explicit_themes.css' %});
+
+  .light-mode {
+    background-color: #fff;
+    color: #111827;
+    border-color: #1f2933;
+  }
+
+  .light-mode.secondary {
+    color: #6b7280;
+  }
+
+  .dark-mode {
+    background-color: #0f172a;
+    color: #e5e7eb;
+    border-color: #e5e7eb;
+  }
+
+  .dark-mode.secondary {
+    color: #9ca3af;
+  }
+
+  table {
+    border-width: var(--border-width);
+    border-style: var(--border-style);
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+  td,
+  th {
+    padding-right: var(--space-3);
+    padding-left: var(--space-3);
+    border-left-style: var(--border-style);
+    border-left-width: var(--border-width);
+  }
+
+  caption {
+    font-size: var(--text-lg);
+  }
+
+  thead {
+    font-weight: var(--font-semibold);
+  }
+</style>
+{% endblock extra_css %}
+
+{% block content %}
+<h1>Design System</h1>
+
+<h3>Color System</h3>
+
+<table>
+  <caption>Neutral base</caption>
+  <thead>
+    <tr>
+      <th scope="col">Color</th><th scope="col" class="light-mode">Light mode</th><th scope="col" class="dark-mode">Dark mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Background</td>
+      <td class="light-mode"></td>
+      <td class="dark-mode"></td>
+    </tr>
+    <tr>
+      <td>Primary text</td>
+      <td class="light-mode">
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </td>
+      <td class="dark-mode">
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </td>
+    </tr>
+    <tr>
+      <td>Secondary text</td>
+      <td class="light-mode secondary">
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </td>
+      <td class="dark-mode secondary">
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Accent (choose ONE)
+
+Blue (classic): #2563EB
+
+Teal (modern): #0F766E
+
+Indigo (refined): #4338CA
+
+Warm gray (ultra-minimal): #374151
+
+Rule: Accent is used for links, focus states, and rare emphasis only.
+
+3. Typography
+Font Stack (simple + professional)
+
+Option A (safe, system-first)
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont,
+             "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+Option B (slightly elevated, still minimal)
+
+Headings: Inter or Source Serif 4
+
+Body: Inter or IBM Plex Sans
+
+One family is enough. Two max.
+
+Type Scale
+Element	Size	Weight
+H1	2.25–2.5rem	600
+H2	1.75rem	600
+H3	1.25rem	600
+Body	1rem	400
+Small / Meta	0.875rem	400
+
+Line height:
+
+Headings: 1.2–1.3
+
+Body: 1.6–1.7
+
+4. Spacing System
+
+Use an 8px grid (boring = good):
+
+4px   – micro
+8px   – xs
+16px  – sm
+24px  – md
+32px  – lg
+48px  – xl
+64px  – section spacing
+
+Rules:
+
+Vertical spacing > horizontal spacing
+
+Never cram content
+
+Sections breathe
+
+5. Layout
+Page Width
+
+Max content width: 640–720px (personal site sweet spot)
+
+Wide sections (hero): up to 960px, centered
+
+Structure
+
+Single column by default
+
+Use columns sparingly (projects, footer)
+
+6. Components (bare minimum)
+Links
+
+Color: accent
+
+No underline by default
+
+Underline on hover
+
+Buttons (optional)
+
+Flat, no gradients
+
+Subtle radius: 6–8px
+
+Primary: accent background, white text
+
+Secondary: transparent + border
+
+Cards (for projects/posts)
+
+White background
+
+Border: 1px solid #E5E7EB
+
+Radius: 8–12px
+
+Shadow: none or extremely subtle
+
+7. Borders & Dividers
+
+Color: #E5E7EB
+
+Thickness: 1px
+
+Use dividers sparingly; whitespace is better
+
+8. Motion (if any)
+
+Duration: 150–200ms
+
+Easing: ease-out
+
+Only on hover/focus
+
+No scroll hijacking, no parallax
+
+9. Accessibility Defaults
+
+Body text contrast ≥ WCAG AA
+
+Focus states visible (outline or accent ring)
+
+Font size never below 14px
+
+Click targets ≥ 44px on mobile
+
+{% endblock content %}

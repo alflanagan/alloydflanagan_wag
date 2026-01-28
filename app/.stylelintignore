@@ -1,0 +1,4 @@
+**/vendor/**
+**/dist/**
+.yarn/**
+webpack.config.js

@@ -1,7 +1,5 @@
 import { html, css, LitElement } from 'lit'
 
-/* global customElements */
-
 export class UnsplashCredit extends LitElement {
   static styles = css`
     #us-logo {
@@ -10,7 +8,7 @@ export class UnsplashCredit extends LitElement {
     }
 
     #us-logo svg {
-      height: 12px;
+      height: var(--text-md);
       width: auto;
       position: relative;
       vertical-align: middle;
@@ -55,5 +53,3 @@ export class UnsplashCredit extends LitElement {
     `
   }
 }
-
-customElements.define('unsplash-credit', UnsplashCredit)

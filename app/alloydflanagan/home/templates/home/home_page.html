@@ -4,7 +4,7 @@
 {% block body_class %}template-homepage{% endblock body_class %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'home/css/home.css' %}" />
+  <link rel="stylesheet" href="{% static 'home/css/home.css' %}" />
 {% endblock extra_css %}
 
 {% block content %}
@@ -12,10 +12,9 @@
   <page-header tabs="About Me,About This Site,Blog" urls="{% url 'about_me' %},/about_this,/blog"></page-header>
   <article>
     <hero-block title="Welcome">This is my personal/professional website.</hero-block>
-    <main id="content" style="margin-top: 0.5em;">
+    <main id="content" style="margin-top: var(--space-2);">
       <principles-block></principles-block>
     </main>
   </article>
-  <footer>
-  </footer>
+  <footer></footer>
 {% endblock content %}

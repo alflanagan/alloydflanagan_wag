@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "Packages used by my web site.",
   "private": true,
+  "type": "module",
   "scripts": {
     "test": "mocha",
-    "build": "yarn run webpack --config webpack.config.js",
-    "watch": "yarn run webpack --config webpack.config.js --watch",
+    "build": "yarn run webpack --config webpack.config.cjs",
+    "watch": "yarn run webpack --config webpack.config.cjs --watch",
     "lintjs": "yarn run standard",
     "formatjs": "yarn run standard --fix",
-    "lintcss": "find . -name .venv -prune -o -name .yarn -prune -o -name vendor -prune -o -name dist -prune -o -name '*.js' -exec yarn stylelint --fix '{}' +; find . -name .venv -prune -o -name .yarn -prune -o -name vendor -prune -o -name dist -prune -o -name '*.css' -exec yarn stylelint --fix '{}' +"
+    "stylelint": "yarn exec stylelint '**/*.js' '**/*.css'",
+    "style-fix": "yarn exec stylelint --fix '**/*.js' '**/*.css'"
   },
   "author": "A. Lloyd Flanagan <a.lloyd.flanagan@gmail.com>",
   "license": "GPL-3.0-or-later",
@@ -22,10 +24,14 @@
     "globals": "^16.5.0",
     "jsdoc": "^4.0.5",
     "mocha": "^11.7.4",
+    "postcss": "^8.5.6",
+    "postcss-styled-syntax": "^0.7.1",
     "prettier": "^3.6.2",
     "standard": "^17.1.2",
     "stylelint": "^16.25.0",
     "stylelint-config-standard": "^39.0.1",
+    "stylelint-declaration-strict-value": "^1.10.11",
+    "stylelint-no-unresolved-module": "^2.5.2",
     "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"

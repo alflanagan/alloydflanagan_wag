@@ -11,6 +11,9 @@ run-server:
 	uv run gunicorn alloydflanagan.wsgi:application $(SERVER_ARGS); \
 	echo "Server is up."
 
+dev-server:
+	uv run python manage.py runserver 0.0.0.0:8080
+
 djhtml:
 	find alloydflanagan -name '*.html' -exec djhtml -i -t2 '{}' +
 
@@ -27,7 +30,7 @@ test:
 	node `yarn bin mocha`
 
 build:
-	yarn run webpack --config webpack.config.js
+	yarn run webpack --config webpack.config.cjs
 
 lintjs:
 	yarn run standard
@@ -35,11 +38,10 @@ lintjs:
 formatjs:
 	yarn run standard --fix
 
-
-# checks css in lit elements (see .stylintrc.json)
 lintcss:
-	find . $(EXCLUDE_DIRS) -name '*.js' -exec yarn stylelint --fix '{}' +
-	find . $(EXCLUDE_DIRS) -name '*.css' -exec yarn stylelint --fix '{}' +
+	yarn run stylelint
 
+formatcss:
+	yarn run style-fix
 
 lint: isort black flake8 djhtml

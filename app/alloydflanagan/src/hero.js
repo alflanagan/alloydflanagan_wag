@@ -3,30 +3,27 @@ import { html, css, LitElement } from 'lit'
 export class HeroBlock extends LitElement {
   static styles = css`
 
-  @import("../css/colors.css");
+@import("../static/css/variables.css");
 
-  :host {
-    width: 100%;
-    display: block;
-  }
+.hero-block {
+  display: block;
+  padding: var(--space-4);
+}
 
-  .hero-block {
-    display: block;
-    width: 80%;
-    border-color: var(--slate);
-    border-width: 2px;
-    border-style: solid;
-    padding: 1rem;
-  }
+.title {
+  font-size: var(--text-2xl);
+  color: var(--color-text-semibold);
+  margin-right: var(--space-auto);
+  margin-left: var(--space-auto);
+  width: fit-content;
+}
 
-  .title {
-    font-size: 26px;
-    color black;
-  }
-
-  .content {
-    color: var(--dark-grey);
-  }
+.content {
+  color: var(--color-text-primary);
+  margin-right: var(--space-auto);
+  margin-left: var(--space-auto);
+  width: fit-content;
+}
 `
 
   static properties = {

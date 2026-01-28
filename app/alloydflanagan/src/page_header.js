@@ -3,64 +3,58 @@ import { html, css, LitElement } from 'lit'
 
 export class PageHeader extends LitElement {
   static styles = css`
+@import("../static/css/variables.css");
+
 .page-header {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-right: 5%;
-  margin-left: 5%;
-  background-color: var(--slate);
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-4);
+  background-color: var(--color-bg);
 }
 
 header h3 {
-  color: black;
-  font-size: 3.5rem;
-  font-family: Spectral, "Times New Roman", serif;
-  margin-block-start: 0;
-  margin-block-end: 0;
+  color: var(--color-text-primary);
+  font-size: var(--text-3xl);
+  margin-block: var(--space-0);
 }
 
 nav {
-  margin-top: .5rem;
+  margin-top: var(--space-2);
 }
 
 nav menu-link {
-  padding: 0;
-  font-family: Karla, serif;
-  font-weight: 700;
-
-  /* font-variant: small-caps; */
-  color: white; /* rgb(255 255 255 / 100%); */
-  background-color: transparent;
-
-  /* border-bottom: 0.25rem solid transparent; */
-  font-size: 2.5rem;
+  padding: var(--space-0);
+  font-family: var(--font-sans);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+  background-color: var(--color-transparent);
+  font-size: var(--text-base);
 }
 
-  menu-link + menu-link {
-    margin-left: 1rem;
-  }
+menu-link + menu-link {
+  margin-left: var(--space-3);
+}
 
-  nav menu-link:hover,
-  nav menu-link:focus {
-    border-bottom-color: rgb(255 255 255 / 25%);
-  }
+nav menu-link:hover,
+nav menu-link:focus {
+  border-bottom-color: var(--color-text-secondary);
+}
 
-  nav span {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
+nav span {
+  margin-left: var(--space-2);
+  margin-right: var(--space-2);
+}
 
-  nav span:nth-child(1) {
-    margin-left: 0;
-  }
+nav span:nth-child(1) {
+  margin-left: var(--space-0);
+}
 
-  img {
-    max-height: 100px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-  }
+img {
+  max-height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
 `
 
   static properties = {
