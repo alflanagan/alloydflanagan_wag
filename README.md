@@ -1,6 +1,8 @@
 # A Lloyd Flanagan's Personal Website
 
-Wagtail version of my personal website
+~Wagtail~Django version of my personal website.
+
+(Wagtail removed; nice package but not needed. Simplify.)
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
