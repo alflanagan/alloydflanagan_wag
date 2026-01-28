@@ -8,14 +8,11 @@ a {
   font-family: var(--font-sans);
   font-size: var(--text-lg);
   color: var(--color-text-primary);
-  border-bottom-color: var(--color-border);
-  border-width: var(--border-width);
-  border-radius: var(--radius-sm);
+  text-decoration: none;
 }
 
 a:hover, a:focus {
-  color: var(--color-bg-muted);
-  border-bottom-color: var(--color-bg);
+  text-decoration: underline;
 }
 `
 
