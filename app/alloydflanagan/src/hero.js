@@ -3,7 +3,7 @@ import { html, css, LitElement } from 'lit'
 export class HeroBlock extends LitElement {
   static styles = css`
 
-@import("../static/css/variables.css");
+@import url("/static/css/variables.css");
 
 .hero-block {
   display: block;

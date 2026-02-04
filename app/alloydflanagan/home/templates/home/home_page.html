@@ -9,9 +9,12 @@
 
 {% block content %}
   <!--  templates/home/home_page.html -->
-  <page-header tabs="About Me,About This Site,Blog" urls="{% url 'about_me' %},/about_this,/blog"></page-header>
+  <page-header></page-header>
   <article>
-    <hero-block title="Welcome">This is my personal/professional website.</hero-block>
+    <hero-block title="Welcome">
+      <p>This is my personal/professional website.</p>
+      <p>It is very much a work in progress, with minimal design and some parts not yet implemented.</p>
+    </hero-block>
     <main id="content" style="margin-top: var(--space-2);">
       <principles-block></principles-block>
     </main>

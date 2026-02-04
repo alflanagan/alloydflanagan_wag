@@ -1,9 +1,8 @@
-// noinspection JSUnusedGlobalSymbols
 import { html, css, LitElement } from 'lit'
 
 export class PageHeader extends LitElement {
   static styles = css`
-@import("../static/css/variables.css");
+@import url("/static/css/variables.css");
 
 .page-header {
   padding-top: var(--space-2);
@@ -59,19 +58,6 @@ img {
 
   static properties = {
     banner: { type: String },
-    tabs: { type: String }, // comma-separated
-    urls: { type: String } // comma-separated
-  }
-
-  /** Returns a single array whose elements are 2-tuples of successive elements of a and b.
-      The resulting array will have the length of the shorter of a or b. */
-  zip (a, b) {
-    const minN = Math.min(a.length, b.length)
-    const result = []
-    for (let i = 0; i < minN; i++) {
-      result.push([a[i], b[i]])
-    }
-    return result
   }
 
   render () {
@@ -80,15 +66,10 @@ img {
       banner = html`<img src="${this.banner}" alt="basic web site banner">`
     }
 
-    const tabsList = this.tabs.split(',')
-    const urlList = this.urls.split(',')
-
-    const linkList = this.zip(tabsList, urlList)
-
     // note: final <div></div> seems to fix problem where content after page-header
     // became a child node, not a sibling. Not sure if a bug in Lit or something I did.
     return html`
-<header class="page-header">
+<header class="page-header container">
   <div class="inner">
     <div>
       <h3>A Lloyd Flanagan's Website</h3>
@@ -97,7 +78,10 @@ img {
       ${banner}
     </div>
     <nav class="nav nav-masthead justify-content-center app-nav">
-      ${linkList.map(tab => html`<menu-link title="${tab[0]}" href="${tab[1]}" />`)}
+      <menu-link href="about" title="About Me"></menu-link>
+      <menu-link href="#" title="About This Site" disabled></menu-link>
+      <menu-link href="#" title="Blog" disabled></menu-link>
+      <menu-link href="#" title="Portfolio" disabled></menu-link>
     </nav>
   </div>
 </header>

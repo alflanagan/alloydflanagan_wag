@@ -5,16 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      {% block title %}
-        {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
-      {% endblock title %}
-      {% block title_suffix %}
-        {% with self.get_site.site_name as site_name %}
-          {% if site_name %}- {{ site_name }}{% endif %}
-        {% endwith %}
-      {% endblock title_suffix %}
-    </title>
+    <title>A Lloyd Flanagan</title>
     <meta name="description" content="A Lloyd Flanagan's Personal Website" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +29,7 @@
 
     {# Global javascript #}
     <script
-      type="text/javascript"
+      type="module"
       src="{% static 'dist/bundle.js' %}"
       defer="defer"></script>
 
