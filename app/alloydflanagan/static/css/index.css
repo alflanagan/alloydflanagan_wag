@@ -1,5 +1,4 @@
-@import url("./variables.css");
-@import url("../vendor/bootstrap-5.3.8-dist/css/bootstrap.min.css");
+@import url("/static/css/variables.css");
 
 body {
   background: var(--color-bg);
@@ -20,4 +19,6 @@ a:hover {
 
 .cover-container {
   max-width: var(--max-width-md);
+  margin-right: auto;
+  margin-left: auto;
 }

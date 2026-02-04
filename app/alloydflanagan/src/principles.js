@@ -2,7 +2,7 @@ import { html, css, LitElement } from 'lit'
 
 export class PrinciplesBlock extends LitElement {
   static styles = css`
-@import("../static/css/variables.css");
+@import url("/static/css/variables.css");
 
 #principles {
   display: block;

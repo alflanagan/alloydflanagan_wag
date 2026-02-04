@@ -9,3 +9,6 @@ __pycache__/
 *.bak
 .env*
 app/alloydflanagan/static/images/*
+
+# emacs
+.dir-locals.el
