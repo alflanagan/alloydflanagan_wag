@@ -1,4 +1,4 @@
 [tools]
 node = "latest"
 qdns = "latest"
-python = "3.14"
+python = "3.14.2"

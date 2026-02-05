@@ -8,23 +8,15 @@ a {
   font-family: var(--font-sans);
   font-size: var(--text-lg);
   color: var(--color-text-primary);
-  text-decoration: none;
+  border-bottom-color: var(--color-border);
+  border-width: var(--border-width);
+  border-radius: var(--radius-sm);
 }
 
 a:hover, a:focus {
-  text-decoration: underline;
-  }
-
-  button {
-  background-color: var(--background-color);
-  border: none;
-  }
-
-  button[disabled] {
-  color: var(--color-text-muted);
-  font-family: var(--font-sans);
-  font-size: var(--text-lg);
-  }
+  color: var(--color-bg-muted);
+  border-bottom-color: var(--color-bg);
+}
 `
 
   static properties = {

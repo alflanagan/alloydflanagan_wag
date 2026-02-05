@@ -3,3 +3,7 @@ article {
   margin-right: var(--space-auto);
   margin-left: var(--space-auto);
 }
+
+#content {
+  margin-top: var(--space-2)
+}

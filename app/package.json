@@ -38,9 +38,6 @@
   },
   "packageManager": "yarn@4.12.0",
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.8",
-    "htmx.org": "^2.0.8",
     "lit": "^3.3.1"
   },
   "standard": {

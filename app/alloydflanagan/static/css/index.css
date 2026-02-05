@@ -18,7 +18,9 @@ a:hover {
 }
 
 .cover-container {
+  display: flex;  /* should use "grid"? */
   max-width: var(--max-width-md);
   margin-right: auto;
   margin-left: auto;
+  flex-direction: column;
 }

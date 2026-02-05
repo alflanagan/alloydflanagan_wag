@@ -21,8 +21,11 @@ dependencies = [
 [dependency-groups]
 dev = [
     "autotools-language-server>=0.0.22",
+    "black>=25.12.0",
     "djhtml>=3.0.10",
     "isort>=7.0.0",
+    "jedi>=0.19.2",
+    "python-lsp-server[flake8,rope,yapf]>=1.14.0",
     "ruff>=0.14.2",
 ]
 
