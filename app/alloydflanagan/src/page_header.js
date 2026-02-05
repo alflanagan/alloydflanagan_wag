@@ -69,7 +69,7 @@ img {
     // note: final <div></div> seems to fix problem where content after page-header
     // became a child node, not a sibling. Not sure if a bug in Lit or something I did.
     return html`
-<header class="page-header container">
+<header class="page-header">
   <div class="inner">
     <div>
       <h3>A Lloyd Flanagan's Website</h3>

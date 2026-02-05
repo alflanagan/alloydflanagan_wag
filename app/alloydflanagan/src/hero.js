@@ -5,11 +5,6 @@ export class HeroBlock extends LitElement {
 
 @import url("/static/css/variables.css");
 
-.hero-block {
-  display: block;
-  padding: var(--space-4);
-}
-
 .title {
   font-size: var(--text-2xl);
   color: var(--color-text-semibold);
@@ -17,6 +12,14 @@ export class HeroBlock extends LitElement {
   margin-left: var(--space-auto);
   width: fit-content;
 }
+
+  .hero-block {
+    display: block;
+    border-color: var(--color-border);
+    border-width: var(--borde-width);
+    border-style: solid;
+    padding: var(--space-4);
+  }
 
 .content {
   color: var(--color-text-primary);
