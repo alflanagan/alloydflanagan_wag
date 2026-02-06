@@ -1,5 +1,4 @@
 # yarn pnp files
-.pnp.*
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
