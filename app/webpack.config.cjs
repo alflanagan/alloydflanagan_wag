@@ -1,13 +1,12 @@
 const path = require('path')
-const CopyPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const PnpWebpackPlugin = require('pnp-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin')
+const PnpWebpackPlugin = require('pnp-webpack-plugin')
 
 module.exports = {
   entry: './alloydflanagan/src/index.js',
   output: {
     path: path.resolve(__dirname, './alloydflanagan/static/dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   mode: 'development',
   target: 'web',
@@ -21,19 +20,8 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: [
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true
-            }
-          },
-          MiniCssExtractPlugin.loader,
-        ]
-      }
-    ]
+        use: ['style-loader', 'css-loader']
+      },
+    ],
   },
-  plugins: [
-    new MiniCssExtractPlugin()
-  ]
 }
