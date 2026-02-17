@@ -12,3 +12,4 @@ app/alloydflanagan/static/images/*
 
 # emacs
 .dir-locals.el
+.ropeproject

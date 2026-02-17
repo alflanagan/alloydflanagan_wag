@@ -16,3 +16,5 @@ static/*
 !static/.keep
 dist/
 !dist/.keep
+.venv/
+.ruff_cache
