@@ -44,8 +44,11 @@ RUN npm install -g npm; \
 RUN corepack enable
 
 # hadolint ignore=DL3016
-RUN yarn; \
-    yarn build
+RUN yarn config set nodeLinker node-modules
+
+RUN yarn install
+
+RUN yarn build
 
 # Note: Fly automatically sets DATABASE_URL
 CMD ["make", "run-server"]
