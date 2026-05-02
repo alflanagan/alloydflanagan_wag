@@ -45,7 +45,6 @@ MIDDLEWARE = [
 ROOT_URLCONF = "alloydflanagan.urls"
 
 # Tell django models which field to use for auto-increment fields
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 TEMPLATES = [
     {
@@ -98,7 +97,6 @@ TIME_ZONE = "UTC"
 
 USE_I18N = True
 
-USE_L10N = True
 
 USE_TZ = True
 
@@ -114,7 +112,14 @@ STATICFILES_FINDERS = [
 # ManifestStaticFilesStorage is recommended in production, to prevent outdated
 # JavaScript / CSS assets being served from cache
 # See https://docs.djangoproject.com/en/5.2/ref/contrib/staticfiles/#manifeststaticfilesstorage
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
+    },
+}
 # this should contain any static files that aren't specific to an app
 STATICFILES_DIRS = [os.path.join(PROJECT_DIR, "static")]  # /app/alloydflanagan/static
 STATIC_ROOT = os.path.join(BASE_DIR, "static")  # /app/static
