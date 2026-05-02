@@ -14,12 +14,19 @@ https://gitlab.com/a-lloyd-flanagan-group/alloydflanagan_wag
 ```
 /                          ← repo root
 ├── Dockerfile             ← production image (python:3.14.0-trixie)
+├── context.Dockerfile     ← dummy image for testing .dockerignore
 ├── docker-compose.yml     ← local dev stack (wagtail + postgres + redis)
-├── context.Dockerfile
-├── fly.toml               ← Fly.io deployment (app: alloydflanagan-wag, region: iad)
-├── fly-preview.yml
+├── docker-entrypoint-initdb.d/
+│   └── setup-database.sql ← creates dev DB user + database on first run
+├── .dockerignore          ← excludes .venv, .yarn, media, .env*, *.bak etc.
+├── .env                   ← gitignored; holds DATABASE_URL for production
+├── fly.toml               ← Fly.io config (app: alloydflanagan-wag, region: iad)
+├── fly-preview.yml        ← GitHub Actions workflow: PR review apps on Fly.io
 ├── mise.toml              ← tool versions (node 24, python 3.14.2)
 ├── Makefile               ← docker-compose helpers + fly.io exec shortcuts
+├── Procfile               ← release: migrate; web: gunicorn (Heroku-style)
+├── figma_ready_component_list_consulting_developer_site.md
+│                          ← Figma component planning doc for site redesign
 └── app/                   ← Django project root (Docker WORKDIR /app)
     ├── manage.py
     ├── pyproject.toml     ← Python deps, ruff/isort config
@@ -44,7 +51,7 @@ https://gitlab.com/a-lloyd-flanagan-group/alloydflanagan_wag
         │   ├── css/
         │   │   ├── index.css
         │   │   └── variables.css   ← all design tokens (CSS custom properties)
-        │   └── dist/               ← webpack output (committed; bundle.js)
+        │   └── dist/               ← webpack output (not committed; run yarn build)
         ├── templates/     ← project-level templates (base.html, components/)
         ├── blog/
         ├── home/
