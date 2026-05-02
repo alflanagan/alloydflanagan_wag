@@ -15,7 +15,7 @@ The canonical source is GitLab: https://gitlab.com/a-lloyd-flanagan-group/alloyd
 ├── context.Dockerfile
 ├── fly.toml               ← Fly.io deployment (app: alloydflanagan-wag, region: iad)
 ├── fly-preview.yml
-├── mise.toml              ← tool versions (node latest, python 3.14.2)
+├── mise.toml              ← tool versions (node 24, python 3.14.2)
 ├── Makefile               ← docker-compose helpers + fly.io exec shortcuts
 └── app/                   ← Django project root (Docker WORKDIR /app)
     ├── manage.py
@@ -244,10 +244,29 @@ The production Docker image installs uv via pip, then `uv sync --frozen --no-dev
 
 ## Notes & known issues
 
-- The `blog` app is in progress. Its URL is commented out in `urls.py`. See `blog/requirements.md` for the spec.
-- `home/models.py` has commented-out StreamField/Wagtail remnants — these can be cleaned up.
-- The `blog/views.py` DRF `BlogPostAPIView` is a stub (`pass`).
+### Blog (in progress)
+- Blog URL is commented out in `urls.py`. See `blog/requirements.md` for the spec.
+- `blog/views.py` `BlogPostAPIView` is a stub (`pass`) — not wired to any URL pattern.
+- `blog/templates/blog/blog_index_page.html` has the post loop commented out (Wagtail remnants).
+
+### Wagtail remnants (to clean up)
+- `home/models.py` has commented-out StreamField definitions for `header` and `content`.
+- `search/views.py` has the entire search implementation commented out — Wagtail `Page`/`Query` imports that no longer apply.
+- `templates/components/tech_note.html` still credits Wagtail in the footer despite its removal.
+
+### Frontend
+- CSS typo in `alloydflanagan/src/hero.js`: `var(--borde-width)` should be `var(--border-width)`.
+- Three nav links in `page_header.js` are disabled placeholders: "About This Site", "Blog", "Portfolio".
+- `alloydflanagan/src/index.bak` is a stale backup file (old Shoelace-based imports) — can be deleted.
+
+### Models
+- `about_me/models.py` is empty — no fields defined yet.
+- `design_system/models.py` has open architectural questions in comments (whether the app should be model-driven, whether `variables.css` should become a template).
+
+### Search
 - `search` app has no model; it only has a view and templates.
+
+### Build & environment
 - Webpack output (`alloydflanagan/static/dist/`) is **not** committed — `static/*` and `dist/` are gitignored in `app/.gitignore`. Run `yarn build` after cloning.
 - `sqlite3.db`, `media/*`, and `app/static/*` (collectstatic output) are all gitignored.
 - `.ruff_cache/` is inside `app/` and gitignored.
