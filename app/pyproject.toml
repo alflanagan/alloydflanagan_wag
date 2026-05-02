@@ -30,7 +30,7 @@ dev = [
 ]
 
 [tool.isort]
-line_length = 120
+line_length = 100
 known_django = "django"
 known_wagtail = "wagtail"
 sections = ["FUTURE","STDLIB","DJANGO","WAGTAIL","THIRDPARTY","FIRSTPARTY","LOCALFOLDER"]
@@ -42,5 +42,5 @@ ensure_newline_before_comments = true
 skip = "migrations"
 
 [tool.ruff]
-line-length = 120
+line-length = 100
 exclude = ["migrations"]
