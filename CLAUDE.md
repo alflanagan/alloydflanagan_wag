@@ -1,8 +1,11 @@
 # alloydflanagan_wag — Claude Context
 
-Personal website for A. Lloyd Flanagan (https://alloydflanagan.com). Originally a Wagtail project; Wagtail was removed and the site now uses plain Django 5.2.
+Personal website for A. Lloyd Flanagan (https://alloydflanagan.com).
+Originally a Wagtail project; Wagtail was removed and the site now uses
+plain Django 5.2.
 
-The canonical source is GitLab: https://gitlab.com/a-lloyd-flanagan-group/alloydflanagan_wag (GitHub is a mirror).
+The canonical source is GitLab (GitHub is a mirror):
+https://gitlab.com/a-lloyd-flanagan-group/alloydflanagan_wag
 
 ---
 
@@ -74,7 +77,9 @@ The canonical source is GitLab: https://gitlab.com/a-lloyd-flanagan-group/alloyd
 | Node env | Yarn 4 (Berry) |
 | Deployment | Fly.io |
 
-Key Django packages: `django-htmx`, `django-debug-toolbar` (dev only), `django-structlog`, `djangorestframework`, `dj-database-url`, `pillow`, `psycopg` (v3).
+Key Django packages: `django-htmx`, `django-debug-toolbar` (dev only),
+`django-structlog`, `djangorestframework`, `dj-database-url`, `pillow`,
+`psycopg` (v3).
 
 ---
 
@@ -88,13 +93,17 @@ Key Django packages: `django-htmx`, `django-debug-toolbar` (dev only), `django-s
 | `search` | — | Active (view only, no model) |
 | `blog` | `/blog/` | **In progress** — URL commented out; has requirements doc, models, stub DRF APIView |
 
-Each app follows the standard Django layout: `models.py`, `views.py`, `urls.py`, `admin.py`, `templates/<app>/`, `migrations/`. Some apps also have a `src/` directory for app-specific Lit components.
+Each app follows the standard Django layout: `models.py`, `views.py`,
+`urls.py`, `admin.py`, `templates/<app>/`, `migrations/`. Some apps
+also have a `src/` directory for app-specific Lit components.
 
 ---
 
 ## Frontend architecture
 
-JavaScript is written as **Lit 3 Web Components** and registered as native custom elements. The entry point is `alloydflanagan/src/index.js`, which imports and registers all components.
+JavaScript is written as **Lit 3 Web Components** and registered as
+native custom elements. The entry point is `alloydflanagan/src/index.js`,
+which imports and registers all components.
 
 **Custom elements defined:**
 
@@ -107,9 +116,14 @@ JavaScript is written as **Lit 3 Web Components** and registered as native custo
 | `<principles-block>` | `src/principles.js` |
 | `<unsplash-credit>` | `src/unsplash_credit.js` |
 
-Webpack bundles everything to `alloydflanagan/static/dist/bundle.js` (loaded via `<script type="module">` in `base.html`).
+Webpack bundles everything to `alloydflanagan/static/dist/bundle.js`
+(loaded via `<script type="module">` in `base.html`).
 
-**CSS design tokens** live in `alloydflanagan/static/css/variables.css`. All components use `var(--token-name)` — never hard-coded values. Tokens include colors, typography, spacing (8px grid), layout widths, borders, shadows, motion, and z-index. Full dark-mode support via `@media (prefers-color-scheme: dark)`.
+**CSS design tokens** live in `alloydflanagan/static/css/variables.css`.
+All components use `var(--token-name)` — never hard-coded values. Tokens
+include colors, typography, spacing (8px grid), layout widths, borders,
+shadows, motion, and z-index. Full dark-mode support via
+`@media (prefers-color-scheme: dark)`.
 
 ---
 
@@ -118,10 +132,13 @@ Webpack bundles everything to `alloydflanagan/static/dist/bundle.js` (loaded via
 Three settings files, all in `alloydflanagan/settings/`:
 
 - `base.py` — shared config; reads `DATABASE_URL` via `dj-database-url`
-- `dev.py` — `DEBUG=True`, debug-toolbar, `DummyCache`, `DisableBrowserCacheMiddleware`; tries to import `local.py`
-- `production.py` — `DEBUG=False`; reads `DJANGO_SECRET_KEY` and `DJANGO_ALLOWED_HOSTS` from env; tries to import `local.py`
+- `dev.py` — `DEBUG=True`, debug-toolbar, `DummyCache`,
+  `DisableBrowserCacheMiddleware`; tries to import `local.py`
+- `production.py` — `DEBUG=False`; reads `DJANGO_SECRET_KEY` and
+  `DJANGO_ALLOWED_HOSTS` from env; tries to import `local.py`
 
-An optional `settings/local.py` (not in git) can be used for personal overrides in both envs.
+An optional `settings/local.py` (not in git) can be used for personal
+overrides in both envs.
 
 `DJANGO_SETTINGS_MODULE` is set via environment:
 - docker-compose → `alloydflanagan.settings.dev`
@@ -142,7 +159,9 @@ make rootshell    # exec bash in wagtail container (as root)
 make dbshell      # exec bash in postgres container
 ```
 
-Docker-compose mounts key source dirs into the running container so edits are live without rebuilding. The `.venv` directory is intentionally **not** mounted.
+Docker-compose mounts key source dirs into the running container so
+edits are live without rebuilding. The `.venv` directory is
+intentionally **not** mounted.
 
 ### Dev credentials (docker-compose only)
 
@@ -207,7 +226,9 @@ make formatcss    # CSS fix
 - Line length: **100**
 - Formatter: `black`
 - Linter: `ruff` + `flake8`
-- Imports: `isort` with Django section ordering (`FUTURE › STDLIB › DJANGO › THIRDPARTY › FIRSTPARTY › LOCALFOLDER`), multi-line output 3
+- Imports: `isort` with Django section ordering
+  (`FUTURE › STDLIB › DJANGO › THIRDPARTY › FIRSTPARTY › LOCALFOLDER`),
+  multi-line output 3
 - Migrations excluded from all linting
 - Run everything via `uv run`
 
@@ -216,7 +237,8 @@ make formatcss    # CSS fix
 - **No semicolons**, single quotes, trailing commas (StandardJS + Prettier)
 - ES modules (`"type": "module"` in package.json)
 - Webpack config is CommonJS (`.cjs` extension)
-- Lit components: use `html` and `css` tagged template literals; always use design tokens
+- Lit components: use `html` and `css` tagged template literals; always
+  use design tokens
 
 ### CSS / HTML templates
 
@@ -238,36 +260,54 @@ make fly_console   # open Fly console
 make fly_users     # count Django users on fly machine
 ```
 
-The production Docker image installs uv via pip, then `uv sync --frozen --no-dev`, then installs Node 24 via `n` and runs `yarn build`. The `CMD` is `make run-server` (migrate → collectstatic → gunicorn on port 8080).
+The production Docker image installs uv via pip, then
+`uv sync --frozen --no-dev`, then installs Node 24 via `n` and runs
+`yarn build`. The `CMD` is `make run-server` (migrate → collectstatic →
+gunicorn on port 8080).
 
 ---
 
 ## Notes & known issues
 
 ### Blog (in progress)
-- Blog URL is commented out in `urls.py`. See `blog/requirements.md` for the spec.
-- `blog/views.py` `BlogPostAPIView` is a stub (`pass`) — not wired to any URL pattern.
-- `blog/templates/blog/blog_index_page.html` has the post loop commented out (Wagtail remnants).
+- Blog URL is commented out in `urls.py`. See `blog/requirements.md`
+  for the spec.
+- `blog/views.py` `BlogPostAPIView` is a stub (`pass`) — not wired to
+  any URL pattern.
+- `blog/templates/blog/blog_index_page.html` has the post loop
+  commented out (Wagtail remnants).
 
 ### Wagtail remnants (to clean up)
-- `home/models.py` has commented-out StreamField definitions for `header` and `content`.
-- `search/views.py` has the entire search implementation commented out — Wagtail `Page`/`Query` imports that no longer apply.
-- `templates/components/tech_note.html` still credits Wagtail in the footer despite its removal.
+- `home/models.py` has commented-out StreamField definitions for
+  `header` and `content`.
+- `search/views.py` has the entire search implementation commented
+  out — Wagtail `Page`/`Query` imports that no longer apply.
+- `templates/components/tech_note.html` still credits Wagtail in the
+  footer despite its removal.
 
 ### Frontend
-- CSS typo in `alloydflanagan/src/hero.js`: `var(--borde-width)` should be `var(--border-width)`.
-- Three nav links in `page_header.js` are disabled placeholders: "About This Site", "Blog", "Portfolio".
-- `alloydflanagan/src/index.bak` is a stale backup file (old Shoelace-based imports) — can be deleted.
+- CSS typo in `alloydflanagan/src/hero.js`: `var(--borde-width)` should
+  be `var(--border-width)`.
+- Three nav links in `page_header.js` are disabled placeholders:
+  "About This Site", "Blog", "Portfolio".
+- `alloydflanagan/src/index.bak` is a stale backup file (old
+  Shoelace-based imports) — can be deleted.
 
 ### Models
 - `about_me/models.py` is empty — no fields defined yet.
-- `design_system/models.py` has open architectural questions in comments (whether the app should be model-driven, whether `variables.css` should become a template).
+- `design_system/models.py` has open architectural questions in
+  comments (whether the app should be model-driven, whether
+  `variables.css` should become a template).
 
 ### Search
 - `search` app has no model; it only has a view and templates.
 
 ### Build & environment
-- Webpack output (`alloydflanagan/static/dist/`) is **not** committed — `static/*` and `dist/` are gitignored in `app/.gitignore`. Run `yarn build` after cloning.
-- `sqlite3.db`, `media/*`, and `app/static/*` (collectstatic output) are all gitignored.
+- Webpack output (`alloydflanagan/static/dist/`) is **not** committed
+  — `static/*` and `dist/` are gitignored in `app/.gitignore`. Run
+  `yarn build` after cloning.
+- `sqlite3.db`, `media/*`, and `app/static/*` (collectstatic output)
+  are all gitignored.
 - `.ruff_cache/` is inside `app/` and gitignored.
-- `mise.toml` at root specifies tool versions for local development outside Docker.
+- `mise.toml` at root specifies tool versions for local development
+  outside Docker.
