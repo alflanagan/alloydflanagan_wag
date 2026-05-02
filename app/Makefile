@@ -30,7 +30,7 @@ test:
 	node `yarn bin mocha`
 
 build:
-	yarn run webpack --config webpack.config.cjs
+	yarn run webpack --config webpack.config.js
 
 lintjs:
 	yarn run standard

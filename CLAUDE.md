@@ -24,7 +24,7 @@ https://gitlab.com/a-lloyd-flanagan-group/alloydflanagan_wag
     ├── manage.py
     ├── pyproject.toml     ← Python deps, ruff/isort config
     ├── package.json       ← JS deps and scripts
-    ├── webpack.config.cjs ← bundles app/alloydflanagan/src/ → static/dist/bundle.js
+    ├── webpack.config.js  ← bundles app/alloydflanagan/src/ → static/dist/bundle.js
     ├── Makefile           ← dev task runner (lint, format, test, server)
     ├── uv.lock
     ├── yarn.lock
@@ -236,7 +236,8 @@ make formatcss    # CSS fix
 
 - **No semicolons**, single quotes, trailing commas (StandardJS + Prettier)
 - ES modules (`"type": "module"` in package.json)
-- Webpack config is CommonJS (`.cjs` extension)
+- Webpack config is ESM (`webpack.config.js`, uses `import`/`export default`
+  and `fileURLToPath` to reconstruct `__dirname`)
 - Lit components: use `html` and `css` tagged template literals; always
   use design tokens
 
