@@ -12,8 +12,5 @@ sqlite3.db
 
 # files collected by manage.py collectstatic
 media/*
-!media/.keep
 static/*
-!static/.keep
 dist/
-!dist/.keep

@@ -248,6 +248,7 @@ The production Docker image installs uv via pip, then `uv sync --frozen --no-dev
 - `home/models.py` has commented-out StreamField/Wagtail remnants — these can be cleaned up.
 - The `blog/views.py` DRF `BlogPostAPIView` is a stub (`pass`).
 - `search` app has no model; it only has a view and templates.
-- Static files in `alloydflanagan/static/dist/` (webpack output) are committed to the repo.
+- Webpack output (`alloydflanagan/static/dist/`) is **not** committed — `static/*` and `dist/` are gitignored in `app/.gitignore`. Run `yarn build` after cloning.
+- `sqlite3.db`, `media/*`, and `app/static/*` (collectstatic output) are all gitignored.
 - `.ruff_cache/` is inside `app/` and gitignored.
 - `mise.toml` at root specifies tool versions for local development outside Docker.
